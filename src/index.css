@@ -1,0 +1,62 @@
+:root {
+  /* Default/Home Theme (Bright Futuristic: Red, Orange, Gold) */
+  --bg-color: #0f0500;
+  --text-main: #fffcf0;
+  --text-secondary: #ffddaa;
+  
+  --primary-accent: #ff4500; /* Vivid Orange/Red */
+  --secondary-accent: #ffd700; /* Gold */
+  --tertiary-accent: #ff8c00; /* Dark Orange */
+  
+  --header-bg: rgba(15, 5, 0, 0.8);
+  --header-border: #ff4500;
+  
+  --glow-color: rgba(255, 69, 0, 0.6);
+  --font-family-main: 'Orbitron', 'Inter', sans-serif;
+}
+
+[data-theme="robocommando"] {
+  /* Robocommando Theme (Dark Neon Blue, Black, Cyan) */
+  --bg-color: #0f0500;
+  --text-main: #f0f8ff;
+  --text-secondary: #8aadeb;
+  
+  --primary-accent: #0055ff; /* Neon Blue */
+  --secondary-accent: #00ffff; /* Cyan/Blue */
+  --tertiary-accent: #1e90ff; /* Dodger Blue */
+  
+  --header-bg: rgba(5, 5, 16, 0.8);
+  --header-border: #0055ff;
+  
+  --glow-color: rgba(0, 85, 255, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-family-main);
+  transition: background-color 0.5s ease, color 0.5s ease;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Base Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title-glow {
+  text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+}

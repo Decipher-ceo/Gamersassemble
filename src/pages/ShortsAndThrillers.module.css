@@ -1,0 +1,84 @@
+.container {
+  padding: 120px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--primary-accent);
+}
+
+.categorySection {
+  margin-bottom: 80px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: var(--secondary-accent);
+  margin-bottom: 30px;
+  border-left: 5px solid var(--primary-accent);
+  padding-left: 15px;
+}
+
+.shortsShelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.shortCard {
+  text-align: center;
+}
+
+.shortCard .videoPlaceholder {
+  aspect-ratio: 9 / 16;
+  background: #1a1a1a;
+  border: 1px solid var(--primary-accent);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.thrillersShelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.thrillerCard .videoPlaceholder {
+  aspect-ratio: 16 / 9;
+  background: #1a1a1a;
+  border: 1px solid var(--primary-accent);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.shortCard:hover .videoPlaceholder,
+.thrillerCard:hover .videoPlaceholder {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+.playIcon {
+  font-size: 3rem;
+  color: var(--primary-accent);
+  opacity: 0.7;
+}
+
+.shortCard h3, .thrillerCard h3 {
+  color: var(--text-main);
+  font-size: 1.1rem;
+}

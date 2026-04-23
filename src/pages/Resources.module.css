@@ -1,0 +1,44 @@
+.container {
+  padding: 120px 20px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 60px;
+  color: var(--primary-accent);
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.storyCard {
+  background: rgba(255, 69, 0, 0.05);
+  border: 1px solid var(--primary-accent);
+  padding: 30px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.storyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--glow-color);
+}
+
+.storyTitle {
+  font-family: 'Black Ops One', sans-serif;
+  color: var(--secondary-accent);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.storyContent {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

@@ -1,0 +1,254 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.heroSection {
+  width: 100%;
+  height: 80vh;
+  background-image: linear-gradient(rgba(15, 5, 0, 0.5), rgba(15, 5, 0, 0.9)), url('/images/home_studio_bg.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  text-align: center;
+  max-width: 800px;
+  z-index: 2;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mainTitle {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: var(--secondary-accent);
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+
+.exploreBtn {
+  background: linear-gradient(45deg, var(--primary-accent), var(--tertiary-accent));
+  border: none;
+  border-radius: 50px;
+  padding: 15px 40px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.exploreBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--glow-color), 0 0 40px var(--secondary-accent);
+}
+
+.gamesGridSection {
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: var(--primary-accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.gridCard {
+  background-color: rgba(255, 69, 0, 0.1);
+  border: 1px solid var(--primary-accent);
+  border-radius: 12px;
+  padding: 40px 20px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: inset 0 0 10px rgba(255, 69, 0, 0.1);
+}
+
+.gridCard:hover {
+  background-color: rgba(255, 69, 0, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px var(--glow-color);
+}
+
+.gridCard h3 {
+  color: var(--secondary-accent);
+  font-size: 1.5rem;
+}
+
+.snakeCard h3 {
+  font-family: 'Creepster', cursive;
+  letter-spacing: 2px;
+}
+
+.roboCard h3 {
+  font-family: 'Black Ops One', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.technoCard h3 {
+  font-family: 'Audiowide', sans-serif;
+  letter-spacing: 1px;
+}
+
+.h2oCard h3 {
+  font-family: 'Righteous', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+/* Slideshow Section */
+.slideshowSection {
+  width: 100%;
+  padding: 40px 20px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slideshowContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 60vh;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 0 20px var(--glow-color);
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: lightUp 1.5s ease-in-out forwards;
+}
+
+.placeholderSlide {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 69, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px dashed var(--secondary-accent);
+  color: var(--secondary-accent);
+  font-size: 2.5rem;
+  font-family: 'Creepster', cursive;
+  animation: lightUp 1.5s ease-in-out forwards;
+}
+
+@keyframes lightUp {
+  0% { filter: brightness(0.1); opacity: 0; }
+  100% { filter: brightness(1); opacity: 1; }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--primary-accent);
+  color: var(--primary-accent);
+  font-size: 2.5rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.arrow:hover {
+  background: var(--primary-accent);
+  color: white;
+  box-shadow: 0 0 15px var(--primary-accent);
+}
+
+.leftArrow {
+  left: 20px;
+}
+
+.rightArrow {
+  right: 20px;
+}
+
+.dotsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+.dot.activeDot {
+  background-color: var(--primary-accent);
+  transform: scale(1.5);
+  box-shadow: 0 0 15px var(--primary-accent);
+}
+
+.navLine {
+  width: 30px;
+  height: 3px;
+  background-color: rgba(255, 69, 0, 0.3);
+  transition: background-color 0.4s ease;
+}
+
+.dot.activeDot + .navLine {
+  background-color: var(--primary-accent);
+  box-shadow: 0 0 10px var(--primary-accent);
+}
