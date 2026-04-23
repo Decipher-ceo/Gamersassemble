@@ -134,3 +134,31 @@
   color: var(--bg-color);
   box-shadow: 0 0 30px var(--secondary-accent), inset 0 0 10px #fff;
 }
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .placeholderBox {
+    height: 200px;
+    font-size: 1.1rem;
+  }
+
+  .neonBtn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}

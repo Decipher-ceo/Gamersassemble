@@ -4,6 +4,7 @@ import styles from './Header.module.css';
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
     {
@@ -31,40 +32,56 @@ const Header = () => {
     { title: 'Support', type: 'link', path: '/support' }
   ];
 
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
-        <Link to="/">
+        <Link to="/" onClick={closeMenu}>
           <img src="/images/logo.jpg" alt="Logo" className={styles.logoImage} />
         </Link>
         <h1 className={`${styles.studioName} title-glow`}>GAMERVERSE</h1>
       </div>
+
+      <div 
+        className={`${styles.hamburger} ${menuOpen ? styles.activeHamburger : ''}`} 
+        onClick={toggleMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       
-      <nav className={styles.nav}>
+      <nav className={`${styles.nav} ${menuOpen ? styles.navActive : ''}`}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-             <Link to="/" className={styles.navLink}>Home</Link>
+             <Link to="/" className={styles.navLink} onClick={closeMenu}>Home</Link>
           </li>
           {navItems.map((item, idx) => (
             <li 
               key={idx} 
               className={`${styles.navItem} ${item.type === 'dropdown' ? styles.dropdownContainer : ''}`}
-              onMouseEnter={() => item.type === 'dropdown' && setActiveDropdown(idx)}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseEnter={() => item.type === 'dropdown' && window.innerWidth > 1100 && setActiveDropdown(idx)}
+              onMouseLeave={() => window.innerWidth > 1100 && setActiveDropdown(null)}
+              onClick={() => item.type === 'dropdown' && setActiveDropdown(activeDropdown === idx ? null : idx)}
             >
               {item.type === 'link' ? (
-                <Link to={item.path} className={styles.navLink}>{item.title}</Link>
+                <Link to={item.path} className={styles.navLink} onClick={closeMenu}>{item.title}</Link>
               ) : (
                 <>
-                  <span className={styles.navLink}>
+                  <div className={styles.navLink}>
                     {item.title} <span className={styles.arrow}>▼</span>
-                  </span>
+                  </div>
                   {activeDropdown === idx && (
                     <div className={styles.dropdown}>
                       <ul className={styles.dropdownList}>
                         {item.items.map((subItem, subIdx) => (
                           <li key={subIdx}>
-                            <Link to={subItem.path}>{subItem.name}</Link>
+                            <Link to={subItem.path} onClick={closeMenu}>{subItem.name}</Link>
                           </li>
                         ))}
                       </ul>
@@ -81,3 +98,4 @@ const Header = () => {
 };
 
 export default Header;
+

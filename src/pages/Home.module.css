@@ -252,3 +252,40 @@
   background-color: var(--primary-accent);
   box-shadow: 0 0 10px var(--primary-accent);
 }
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .heroSection {
+    height: 60vh;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .slideshowContainer {
+    height: 40vh;
+  }
+
+  .placeholderSlide {
+    font-size: 1.5rem;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+    padding: 8px 15px;
+  }
+}
