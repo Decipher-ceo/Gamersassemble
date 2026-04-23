@@ -13,24 +13,9 @@ import Support from './pages/Support';
 import Footer from './components/Footer';
 import './App.css'; 
 
-function ThemeManager() {
-  const location = useLocation();
-  
-  useEffect(() => {
-    if (location.pathname.includes('robocommando')) {
-      document.documentElement.setAttribute('data-theme', 'robocommando');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-    }
-  }, [location]);
-
-  return null;
-}
-
 function App() {
   return (
     <Router>
-      <ThemeManager />
       <div className="App">
         <Header />
         <main style={{ paddingTop: '80px', minHeight: 'calc(100vh - 160px)' }}>
