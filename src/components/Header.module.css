@@ -144,7 +144,7 @@
     width: 30px;
     height: 25px;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1002;
   }
 
   .hamburger span {
@@ -171,25 +171,29 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 80%;
+    width: 280px;
     height: 100vh;
     background-color: var(--bg-color);
     flex-direction: column;
     padding-top: 100px;
-    transition: right 0.5s ease;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(20px);
-    border-left: 1px solid var(--primary-accent);
+    border-left: 2px solid var(--primary-accent);
+    visibility: hidden;
   }
 
   .navActive {
     right: 0px;
+    visibility: visible;
   }
 
   .navList {
     flex-direction: column;
     width: 100%;
     gap: 0;
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
   }
 
   .navItem {
@@ -200,8 +204,8 @@
 
   .navLink {
     width: 100%;
-    padding: 20px 30px;
-    font-size: 1.1rem;
+    padding: 15px 25px;
+    font-size: 1rem;
     border-bottom: 1px solid rgba(255, 69, 0, 0.1);
     justify-content: space-between;
   }
@@ -214,14 +218,16 @@
     box-shadow: none;
     border: none;
     border-radius: 0;
-    background-color: rgba(255, 69, 0, 0.05);
+    background-color: rgba(255, 69, 0, 0.08);
     animation: none;
     opacity: 1;
     overflow: hidden;
+    padding: 0;
   }
 
   .dropdownList li a {
-    padding: 15px 50px;
+    padding: 12px 40px;
+    font-size: 0.85rem;
   }
 }
 

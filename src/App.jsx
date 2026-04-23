@@ -10,6 +10,7 @@ import Resources from './pages/Resources';
 import ShortsAndThrillers from './pages/ShortsAndThrillers';
 import News from './pages/News';
 import Support from './pages/Support';
+import Footer from './components/Footer';
 import './App.css'; 
 
 function ThemeManager() {
@@ -32,7 +33,7 @@ function App() {
       <ThemeManager />
       <div className="App">
         <Header />
-        <main style={{ paddingTop: '80px' }}>
+        <main style={{ paddingTop: '80px', minHeight: 'calc(100vh - 160px)' }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/robocommando" element={<Robocommando />} />
@@ -45,6 +46,7 @@ function App() {
             <Route path="/support" element={<Support />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </Router>
   );

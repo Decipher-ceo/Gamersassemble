@@ -126,7 +126,7 @@
 /* Slideshow Section */
 .slideshowSection {
   width: 100%;
-  padding: 40px 20px;
+  padding: 40px 0;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -136,13 +136,11 @@
 .slideshowContainer {
   position: relative;
   width: 100%;
-  max-width: 1200px;
-  height: 60vh;
+  height: 600px;
   margin-top: 20px;
   overflow: hidden;
-  border-radius: 12px;
   background: #000;
-  box-shadow: 0 0 20px var(--glow-color);
+  box-shadow: 0 0 15px var(--glow-color); /* Reduced glow by 25% */
 }
 
 .slide {

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Home.module.css';
 
+import { Link } from 'react-router-dom';
+
 const images = [
   { id: 1, src: '/images/robocommando-1.jpg', alt: 'Robocommando' },
   { id: 2, src: '/images/H2O-1.png', alt: 'H2O' },
@@ -34,20 +36,21 @@ const Home = () => {
       <section className={styles.gamesGridSection}>
         <h2 className={`${styles.sectionTitle} title-glow`}>UPCOMING RELEASES</h2>
         <div className={styles.grid}>
-          <button className={`${styles.gridCard} ${styles.snakeCard}`}>
+          <Link to="/sneaky-snake" className={`${styles.gridCard} ${styles.snakeCard}`}>
             <h3>Sneaky Snake</h3>
-          </button>
-          <button className={`${styles.gridCard} ${styles.roboCard}`}>
+          </Link>
+          <Link to="/robocommando" className={`${styles.gridCard} ${styles.roboCard}`}>
             <h3>ROBOCOMMANDO</h3>
-          </button>
-          <button className={`${styles.gridCard} ${styles.technoCard}`}>
+          </Link>
+          <Link to="/techno-sorcery" className={`${styles.gridCard} ${styles.technoCard}`}>
             <h3>Techno Sorcery</h3>
-          </button>
-          <button className={`${styles.gridCard} ${styles.h2oCard}`}>
+          </Link>
+          <Link to="/h2o" className={`${styles.gridCard} ${styles.h2oCard}`}>
             <h3>H2O</h3>
-          </button>
+          </Link>
         </div>
       </section>
+
 
       <section className={styles.slideshowSection}>
         <h2 className={`${styles.sectionTitle} title-glow`}>PROJECT GALLERY</h2>
