@@ -24,6 +24,30 @@
   }
 }
 
+.inactiveNotice {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary-accent);
+  background: rgba(255, 69, 0, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-accent);
+}
+
+.inactiveNotice h2 {
+  font-family: inherit;
+  margin-bottom: 10px;
+  color: var(--secondary-accent);
+  font-size: 1.5rem;
+}
+
+.disabledFieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0.5;
+}
+
 .formSection h2 {
   color: var(--secondary-accent);
   margin-bottom: 30px;

@@ -19,10 +19,16 @@ const Support = () => {
     <div className={styles.container}>
       <h1 className={`${styles.mainTitle} title-glow`}>SUPPORT OUR UNIVERSE</h1>
       
+      <div className={styles.inactiveNotice}>
+        <h2>Campaign status: Inactive.</h2>
+        <p>Sorry but this Campaign is presently unavailable at the moment.</p>
+      </div>
+      
       <div className={styles.supportContent}>
         <div className={styles.formSection}>
           <h2>Fund Raising Campaign</h2>
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+            <fieldset disabled className={styles.disabledFieldset}>
             <div className={styles.inputGroup}>
               <label>Full Name</label>
               <input 
@@ -78,14 +84,15 @@ const Support = () => {
               ></textarea>
             </div>
 
-            <button type="submit" className={styles.submitBtn}>Process Support</button>
+            <button type="submit" className={styles.submitBtn} disabled>Campaign Inactive</button>
+            </fieldset>
           </form>
         </div>
 
         <div className={styles.progressSection}>
           <div className={styles.goalInfo}>
-            <span>Campaign Goal: $50,000</span>
-            <span>Raised: $12,450 (25%)</span>
+            <span>Campaign Goal: 0.00</span>
+            <span>Raised: 0.00</span>
           </div>
           <div className={styles.progressBar}>
             <div className={styles.progressFill} style={{width: '25%'}}></div>

@@ -50,6 +50,14 @@ a {
   color: inherit;
 }
 
+html {
+  font-size: 85%;
+}
+
+img {
+  filter: brightness(1.35);
+}
+
 /* Base Utility Classes */
 .container {
   max-width: 1200px;
