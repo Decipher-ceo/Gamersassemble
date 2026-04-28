@@ -26,6 +26,35 @@ const Home = () => {
     return () => clearInterval(slideInterval);
   }, [currentSlide]); // Restart interval if slide changes manually
 
+  // Countdown Logic
+  const calculateTimeLeft = () => {
+    const targetDate = new Date('2026-04-30T02:22:55').getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        hours: Math.floor(difference / (1000 * 60 * 60)),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroSection}>
@@ -34,6 +63,27 @@ const Home = () => {
           <p className={styles.subtitle}>
             Explore our universe of upcoming 3D gaming titles, immersive shorts, and interactive worlds.
           </p>
+          
+          <div className={styles.countdownWrapper}>
+            <div className={styles.countdownTitle}>CODEX PHASE 1 RELEASE IN:</div>
+            <div className={styles.timer}>
+              <div className={styles.timeBox}>
+                <span className={styles.timeValue}>{timeLeft.hours || '00'}</span>
+                <span className={styles.timeLabel}>HRS</span>
+              </div>
+              <div className={styles.timeDivider}>:</div>
+              <div className={styles.timeBox}>
+                <span className={styles.timeValue}>{timeLeft.minutes || '00'}</span>
+                <span className={styles.timeLabel}>MIN</span>
+              </div>
+              <div className={styles.timeDivider}>:</div>
+              <div className={styles.timeBox}>
+                <span className={styles.timeValue}>{timeLeft.seconds || '00'}</span>
+                <span className={styles.timeLabel}>SEC</span>
+              </div>
+            </div>
+          </div>
+
           <button className={styles.exploreBtn}>Explore Games</button>
         </div>
       </div>
