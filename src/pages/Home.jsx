@@ -84,7 +84,7 @@ const Home = () => {
             </div>
           </div>
 
-          <button className={styles.exploreBtn}>Explore Games</button>
+          <Link to="/robocommando" className={styles.exploreBtn}>Explore Games</Link>
         </div>
       </div>
 
