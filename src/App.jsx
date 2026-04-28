@@ -10,6 +10,10 @@ import Resources from './pages/Resources';
 import ShortsAndThrillers from './pages/ShortsAndThrillers';
 import News from './pages/News';
 import Support from './pages/Support';
+import ResourceSneakySnake from './pages/ResourceSneakySnake';
+import ResourceRobocommando from './pages/ResourceRobocommando';
+import ResourceTechnoSorcery from './pages/ResourceTechnoSorcery';
+import ResourceH2O from './pages/ResourceH2O';
 import Footer from './components/Footer';
 import './App.css'; 
 
@@ -29,6 +33,10 @@ function App() {
             <Route path="/shorts-and-thrillers" element={<ShortsAndThrillers />} />
             <Route path="/news" element={<News />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/resources/sneaky-snake" element={<ResourceSneakySnake />} />
+            <Route path="/resources/robocommando" element={<ResourceRobocommando />} />
+            <Route path="/resources/techno-sorcery" element={<ResourceTechnoSorcery />} />
+            <Route path="/resources/h2o" element={<ResourceH2O />} />
           </Routes>
         </main>
         <Footer />

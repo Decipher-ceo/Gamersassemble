@@ -183,28 +183,33 @@
 
 @keyframes lightUp {
   0% { filter: brightness(0.1); opacity: 0; }
-  100% { filter: brightness(1); opacity: 1; }
+  100% { filter: brightness(1.65); opacity: 1; }
 }
 
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid var(--primary-accent);
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--primary-accent);
   color: var(--primary-accent);
-  font-size: 2.5rem;
-  padding: 10px 20px;
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   z-index: 10;
-  border-radius: 5px;
+  border-radius: 50%;
   transition: all 0.3s ease;
 }
 
 .arrow:hover {
-  background: var(--primary-accent);
+  background: #cc3300; /* Darkened orange */
   color: white;
-  box-shadow: 0 0 15px var(--primary-accent);
+  border-color: #cc3300;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .leftArrow {

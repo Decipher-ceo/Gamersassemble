@@ -41,4 +41,17 @@
 .storyContent {
   color: var(--text-secondary);
   line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.readMore {
+  display: inline-block;
+  color: var(--tertiary-accent);
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.storyCard:hover .readMore {
+  color: var(--secondary-accent);
 }

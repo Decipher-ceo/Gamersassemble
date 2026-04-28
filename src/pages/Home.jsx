@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 
 import { Link } from 'react-router-dom';
@@ -20,6 +20,11 @@ const Home = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
+
+  useEffect(() => {
+    const slideInterval = setInterval(nextSlide, 4000);
+    return () => clearInterval(slideInterval);
+  }, [currentSlide]); // Restart interval if slide changes manually
 
   return (
     <div className={styles.homeContainer}>

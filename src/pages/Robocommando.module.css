@@ -3,6 +3,7 @@
   width: 100%;
   min-height: 100vh;
   background-color: var(--bg-color); /* Integrated dark cinematic aesthetic */
+  overflow-x: hidden;
 }
 
 /* Smoke Parallax Effects */
@@ -160,5 +161,13 @@
   .neonBtn {
     padding: 12px 30px;
     font-size: 1rem;
+  }
+
+  .heroSection {
+    background-attachment: scroll; /* Fixed background often causes issues on mobile */
+  }
+
+  .smokeEffect, .smokeEffect2 {
+    width: 300%; /* Ensure coverage during animation on smaller screens */
   }
 }
