@@ -48,8 +48,9 @@
   border: 1px solid var(--primary-accent);
   padding: 20px;
   border-radius: 15px;
-  margin-bottom: 40px;
-  display: inline-block;
+  margin: 0 auto 40px;
+  display: block;
+  width: fit-content;
   backdrop-filter: blur(5px);
   box-shadow: 0 0 20px rgba(255, 69, 0, 0.2);
 }
