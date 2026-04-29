@@ -22,7 +22,7 @@ const Header = () => {
       type: 'dropdown',
       items: [
         { name: 'SNEAKY SNAKE STORY', path: '/resources/sneaky-snake' },
-        { name: 'ROBOCOMMANDO LORE', path: '/resources/robocommando' },
+        { name: 'ROBOCOMMANDO CODEX', path: '/resources/robocommando' },
         { name: 'TECHNO SORCERY ORIGINS', path: '/resources/techno-sorcery' },
         { name: 'H2O DEPTHS', path: '/resources/h2o' }
       ]
