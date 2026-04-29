@@ -40,6 +40,8 @@ const Home = () => {
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60)
       };
+    } else if (now < targetDate + (24 * 60 * 60 * 1000)) {
+      timeLeft = { showElapsed: true };
     }
 
     return timeLeft;
@@ -68,21 +70,27 @@ const Home = () => {
             <div className={styles.countdownTitle}>CODEX PHASE 1 RELEASE IN:</div>
             <div className={styles.timer}>
               <div className={styles.timeBox}>
-                <span className={styles.timeValue}>{timeLeft.hours || '00'}</span>
+                <span className={styles.timeValue}>{timeLeft.hours !== undefined ? timeLeft.hours : '00'}</span>
                 <span className={styles.timeLabel}>HRS</span>
               </div>
               <div className={styles.timeDivider}>:</div>
               <div className={styles.timeBox}>
-                <span className={styles.timeValue}>{timeLeft.minutes || '00'}</span>
+                <span className={styles.timeValue}>{timeLeft.minutes !== undefined ? timeLeft.minutes : '00'}</span>
                 <span className={styles.timeLabel}>MIN</span>
               </div>
               <div className={styles.timeDivider}>:</div>
               <div className={styles.timeBox}>
-                <span className={styles.timeValue}>{timeLeft.seconds || '00'}</span>
+                <span className={styles.timeValue}>{timeLeft.seconds !== undefined ? timeLeft.seconds : '00'}</span>
                 <span className={styles.timeLabel}>SEC</span>
               </div>
             </div>
           </div>
+
+          {timeLeft.showElapsed && (
+            <p className={styles.elapsedMessage}>
+              Phase 1 Episode 1 of Robocommando is out. Visit our Resource page now
+            </p>
+          )}
 
           <Link to="/robocommando" className={styles.exploreBtn}>Explore Games</Link>
         </div>
