@@ -15,11 +15,12 @@ const H2O = () => {
 
       <div className={styles.contentSections}>
         <section className={styles.section}>
-          <h2 className={`${styles.sectionTitle} title-glow`}>The Abyss</h2>
+          <h2 className={`${styles.sectionTitle} title-glow`}>H2O Alpha Squad</h2>
           <p className={styles.text}>
-            Explore vast underwater cities and battle monstrous sea creatures. Experience the fluid dynamics and breathtaking aquatic life in this 3D survival epic.
+            Be part of that one elite team...<br/>
+            Prove your worth from Intense gun fires, Epic tank battles, Peak ariel warfare, Rescue missions and so much more.
           </p>
-          <div className={styles.placeholderBox}>Deep Sea Preview Coming Soon</div>
+          <div className={styles.placeholderBox}>Game play review coming soon</div>
         </section>
       </div>
     </div>

@@ -26,6 +26,15 @@ const ResourceRobocommando = () => {
         {isReleased ? (
           <>
             <h2 style={{color: 'var(--primary-accent)', marginBottom: '30px', textAlign: 'center', fontSize: '2rem'}}>Codex Phase 1 Episode 1</h2>
+            <div style={{ position: 'relative', margin: '30px 0', borderRadius: '8px', overflow: 'hidden' }}>
+              <img src="/images/phase-1-episode-1.png" alt="Phase 1 Episode 1" style={{ width: '100%', display: 'block' }} />
+              <div style={{
+                position: 'absolute',
+                top: 0, left: 0, right: 0, bottom: 0,
+                background: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 15%, transparent 30%, transparent 80%, rgba(0,0,0,0.6) 100%)',
+                pointerEvents: 'none'
+              }}></div>
+            </div>
             <div className={styles.storyContent} style={{lineHeight: '1.8', fontSize: '1.1rem'}}>
               <p>Humanity had reached great heights.</p>
               <p>No natural force on Earth could challenge it.</p>

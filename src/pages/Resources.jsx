@@ -5,22 +5,22 @@ import styles from './Resources.module.css';
 const Resources = () => {
   const stories = [
     { 
-      title: 'SNEAKY SNAKE STORY', 
+      title: 'Sneaky Snake', 
       path: '/resources/sneaky-snake',
       content: 'In a world of neon corridors and pixelated shadows, the snake must devour to survive...' 
     },
     { 
-      title: 'ROBOCOMMANDO LORE', 
+      title: 'Robocommando Codex', 
       path: '/resources/robocommando',
       content: 'The year is 2084. Neo-Abeokuta is under siege by rogue AI. The Robocommandos are our last line...' 
     },
     { 
-      title: 'TECHNO SORCERY ORIGINS', 
+      title: 'Techno Socery chronicles', 
       path: '/resources/techno-sorcery',
       content: 'When the Great Server crashed, magic leaked into the fiber optic cables. Now, wizards wield laptops...' 
     },
     { 
-      title: 'H2O DEPTHS', 
+      title: 'H2O Rogue Operative Codex', 
       path: '/resources/h2o',
       content: 'Humanity took to the oceans when the surface became a furnace. Down here, the pressure is constant...' 
     }

@@ -19,7 +19,7 @@ const SneakySnake = () => {
           <p className={styles.text}>
             Master the art of the slither in a world where danger lurks around every corner. Collect power-ups, avoid your own trail, and outsmart the environment.
           </p>
-          <div className={styles.placeholderBox}>Gameplay Preview Coming Soon</div>
+          <div className={styles.placeholderBox}>Game play review coming soon</div>
         </section>
       </div>
     </div>

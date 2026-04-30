@@ -19,7 +19,7 @@ const TechnoSorcery = () => {
           <p className={styles.text}>
             Harness the power of digital spells and cybernetic enchantments. Explore a world where code and magic are one and the same.
           </p>
-          <div className={styles.placeholderBox}>Magic Preview Coming Soon</div>
+          <div className={styles.placeholderBox}>Game play review coming soon</div>
         </section>
       </div>
     </div>
