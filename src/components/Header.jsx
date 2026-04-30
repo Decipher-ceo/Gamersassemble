@@ -21,10 +21,10 @@ const Header = () => {
       title: 'Resources',
       type: 'dropdown',
       items: [
-        { name: 'SNEAKY SNAKE STORY', path: '/resources/sneaky-snake' },
+        { name: 'SNEAKY SNAKE', path: '/resources/sneaky-snake' },
         { name: 'ROBOCOMMANDO CODEX', path: '/resources/robocommando' },
-        { name: 'TECHNO SORCERY ORIGINS', path: '/resources/techno-sorcery' },
-        { name: 'H2O DEPTHS', path: '/resources/h2o' }
+        { name: 'TECHNO SORCERY CHRONICLES', path: '/resources/techno-sorcery' },
+        { name: 'H2O ROGUE OPERATIVE CODEX', path: '/resources/h2o' }
       ]
     },
     { title: 'Shorts & Thrillers', type: 'link', path: '/shorts-and-thrillers' },

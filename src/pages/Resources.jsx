@@ -7,7 +7,7 @@ const Resources = () => {
     { 
       title: 'Sneaky Snake', 
       path: '/resources/sneaky-snake',
-      content: 'In a world of neon corridors and pixelated shadows, the snake must devour to survive...' 
+      content: 'Arcane series coming soon' 
     },
     { 
       title: 'Robocommando Codex', 
@@ -15,14 +15,14 @@ const Resources = () => {
       content: 'The year is 2084. Neo-Abeokuta is under siege by rogue AI. The Robocommandos are our last line...' 
     },
     { 
-      title: 'Techno Socery chronicles', 
+      title: 'Techno Sorcery chronicles', 
       path: '/resources/techno-sorcery',
-      content: 'When the Great Server crashed, magic leaked into the fiber optic cables. Now, wizards wield laptops...' 
+      content: 'Chronicles coming soon' 
     },
     { 
       title: 'H2O Rogue Operative Codex', 
       path: '/resources/h2o',
-      content: 'Humanity took to the oceans when the surface became a furnace. Down here, the pressure is constant...' 
+      content: 'Codex coming soon' 
     }
   ];
 
