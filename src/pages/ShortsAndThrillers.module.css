@@ -45,6 +45,7 @@
   margin-bottom: 10px;
   cursor: pointer;
   transition: transform 0.3s;
+  position: relative;
 }
 
 .thrillersShelf {
@@ -64,6 +65,7 @@
   margin-bottom: 15px;
   cursor: pointer;
   transition: transform 0.3s;
+  position: relative;
 }
 
 .shortCard:hover .videoPlaceholder,
@@ -81,4 +83,15 @@
 .shortCard h3, .thrillerCard h3 {
   color: var(--text-main);
   font-size: 1.1rem;
+}
+
+.comingSoon {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: rgba(255, 165, 0, 0.7);
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 500;
+  pointer-events: none;
 }

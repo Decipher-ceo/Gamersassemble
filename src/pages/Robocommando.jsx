@@ -40,9 +40,13 @@ const Robocommando = () => {
         </section>
 
         <section id="story" className={styles.section}>
-          <h2 className={`${styles.sectionTitle} title-glow`}>The Story</h2>
+          <h2 className={`${styles.sectionTitle} title-glow`}>The Codex</h2>
           <p className={styles.text}>
-            In the year 2084, the cybernetic rebellion began. Only the Robocommandos stand between humanity and total annihilation. Traverse through beautifully rendered 3D shorts and experience the lore.
+            Humanity had reached great heights.<br/>
+            No natural force on Earth could challenge it.<br/><br/>
+            The feel of zenith planetary synchronization, the conceivable peak of biological synthesis.<br/>
+            In this momentary apex of control, humanity had grasped a reasonable feat of civilization evolution......<br/><br/>
+            Check out The Robocommando Codex for more
           </p>
         </section>
 
