@@ -26,6 +26,15 @@ const Home = () => {
     return () => clearInterval(slideInterval);
   }, [currentSlide]); // Restart interval if slide changes manually
 
+  return (
+    <div className={styles.homeContainer}>
+      <div className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={`${styles.mainTitle} title-glow`}>THIS IS GAMERVERSE</h1>
+          <p className={styles.subtitle}>
+            Explore our universe of upcoming 3D gaming titles, immersive shorts, and interactive worlds.
+          </p>
+          
           <p className={styles.elapsedMessage}>
             Phase 1 Episode 1 of The Robocommando Codex is out. Visit our Resource page now
           </p>
