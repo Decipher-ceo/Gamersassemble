@@ -40,7 +40,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.logoContainer}>
         <Link to="/" onClick={closeMenu}>
-          <img src="/images/logo.jpg" alt="Logo" className={styles.logoImage} />
+          <img src="/images/Gamers-assemble-logo-main.png" alt="Logo" className={styles.logoImage} />
         </Link>
         <h1 className={`${styles.studioName} title-glow`}>Gamers Assemble</h1>
       </div>
