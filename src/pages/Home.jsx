@@ -4,7 +4,7 @@ import styles from './Home.module.css';
 import { Link } from 'react-router-dom';
 
 const images = [
-  { id: 1, src: '/images/robocommando-1.jpg', alt: 'Robocommando' },
+  { id: 1, src: '/images/robocommando-main.png', alt: 'Robocommando' },
   { id: 2, src: '/images/H2O-1.png', alt: 'H2O' },
   { id: 3, src: '/images/techno-sorcery-4.png', alt: 'Techno Sorcery' }
 ];

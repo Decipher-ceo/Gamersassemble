@@ -7,7 +7,7 @@
 .heroSection {
   width: 100%;
   height: 80vh;
-  background-image: linear-gradient(to bottom, rgba(15, 5, 0, 0.4), var(--bg-color)), url('/images/techno-sorcery-3.png');
+  background-image: linear-gradient(to bottom, rgba(15, 5, 0, 0.4), var(--bg-color)), url('/images/techno-sorcery-4.png');
   background-size: cover;
   background-position: center;
   display: flex;
