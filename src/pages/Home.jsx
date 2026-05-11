@@ -6,12 +6,39 @@ import { Link } from 'react-router-dom';
 const images = [
   { id: 1, src: '/images/robocommando-1.jpg', alt: 'Robocommando' },
   { id: 2, src: '/images/H2O-1.png', alt: 'H2O' },
-  { id: 3, src: '/images/techno-sorcery-4.png', alt: 'Techno Sorcery' },
-  { id: 4, src: null, alt: 'Sneaky Snake (Coming Soon)' }
+  { id: 3, src: '/images/techno-sorcery-4.png', alt: 'Techno Sorcery' }
 ];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0, hours: 0, minutes: 0, seconds: 0
+  });
+
+  useEffect(() => {
+    // Target date: 52 hours from 2026-05-11 20:43:42
+    const targetDate = new Date('2026-05-14T00:43:42').getTime();
+
+    const updateTimer = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    updateTimer();
+    const timer = setInterval(updateTimer, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
@@ -24,7 +51,7 @@ const Home = () => {
   useEffect(() => {
     const slideInterval = setInterval(nextSlide, 4000);
     return () => clearInterval(slideInterval);
-  }, [currentSlide]); // Restart interval if slide changes manually
+  }, [currentSlide]);
 
   return (
     <div className={styles.homeContainer}>
@@ -35,9 +62,30 @@ const Home = () => {
             Explore our universe of upcoming 3D gaming titles, immersive shorts, and interactive worlds.
           </p>
           
-          <p className={styles.elapsedMessage}>
-            Phase 1 Episode 1 of The Robocommando Codex is out. Visit our Resource page now
-          </p>
+          <div className={styles.countdownWrapper}>
+            <p className={styles.countdownTitle}>CODEX PHASE 1 EPISODE 2 RELEASE</p>
+            <div className={styles.timer}>
+              <div className={styles.timeBox}>
+                <span className={styles.timeValue}>{timeLeft.days}</span>
+                <span className={styles.timeLabel}>DAYS</span>
+              </div>
+              <span className={styles.timeDivider}>:</span>
+              <div className={styles.timeBox}>
+                <span className={styles.timeValue}>{timeLeft.hours.toString().padStart(2, '0')}</span>
+                <span className={styles.timeLabel}>HOURS</span>
+              </div>
+              <span className={styles.timeDivider}>:</span>
+              <div className={styles.timeBox}>
+                <span className={styles.timeValue}>{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                <span className={styles.timeLabel}>MIN</span>
+              </div>
+              <span className={styles.timeDivider}>:</span>
+              <div className={styles.timeBox}>
+                <span className={styles.timeValue}>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                <span className={styles.timeLabel}>SEC</span>
+              </div>
+            </div>
+          </div>
 
           <Link to="/robocommando" className={styles.exploreBtn}>Explore Games</Link>
         </div>
@@ -46,9 +94,6 @@ const Home = () => {
       <section className={styles.gamesGridSection}>
         <h2 className={`${styles.sectionTitle} title-glow`}>UPCOMING RELEASES</h2>
         <div className={styles.grid}>
-          <Link to="/sneaky-snake" className={`${styles.gridCard} ${styles.snakeCard}`}>
-            <h3>Sneaky Snake</h3>
-          </Link>
           <Link to="/robocommando" className={`${styles.gridCard} ${styles.roboCard}`}>
             <h3>ROBOCOMMANDO</h3>
           </Link>
@@ -60,7 +105,6 @@ const Home = () => {
           </Link>
         </div>
       </section>
-
 
       <section className={styles.slideshowSection}>
         <h2 className={`${styles.sectionTitle} title-glow`}>PROJECT GALLERY</h2>

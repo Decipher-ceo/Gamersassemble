@@ -5,11 +5,6 @@ import styles from './Resources.module.css';
 const Resources = () => {
   const stories = [
     { 
-      title: 'Sneaky Snake', 
-      path: '/resources/sneaky-snake',
-      content: 'Arcane series coming soon' 
-    },
-    { 
       title: 'Robocommando Codex', 
       path: '/resources/robocommando',
       content: 'The year is 2084. Neo-Abeokuta is under siege by rogue AI. The Robocommandos are our last line...' 

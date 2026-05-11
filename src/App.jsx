@@ -3,14 +3,12 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/Header';
 import Home from './pages/Home';
 import Robocommando from './pages/Robocommando';
-import SneakySnake from './pages/SneakySnake';
 import TechnoSorcery from './pages/TechnoSorcery';
 import H2O from './pages/H2O';
 import Resources from './pages/Resources';
 import ShortsAndThrillers from './pages/ShortsAndThrillers';
 import News from './pages/News';
 import Support from './pages/Support';
-import ResourceSneakySnake from './pages/ResourceSneakySnake';
 import ResourceRobocommando from './pages/ResourceRobocommando';
 import ResourceTechnoSorcery from './pages/ResourceTechnoSorcery';
 import ResourceH2O from './pages/ResourceH2O';
@@ -26,14 +24,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/robocommando" element={<Robocommando />} />
-            <Route path="/sneaky-snake" element={<SneakySnake />} />
             <Route path="/techno-sorcery" element={<TechnoSorcery />} />
             <Route path="/h2o" element={<H2O />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/shorts-and-thrillers" element={<ShortsAndThrillers />} />
             <Route path="/news" element={<News />} />
             <Route path="/support" element={<Support />} />
-            <Route path="/resources/sneaky-snake" element={<ResourceSneakySnake />} />
             <Route path="/resources/robocommando" element={<ResourceRobocommando />} />
             <Route path="/resources/techno-sorcery" element={<ResourceTechnoSorcery />} />
             <Route path="/resources/h2o" element={<ResourceH2O />} />

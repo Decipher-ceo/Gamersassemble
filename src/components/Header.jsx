@@ -11,7 +11,6 @@ const Header = () => {
       title: 'Projects',
       type: 'dropdown',
       items: [
-        { name: 'SNEAKY SNAKE', path: '/sneaky-snake' },
         { name: 'ROBOCOMMANDO', path: '/robocommando' },
         { name: 'TECHNO SORCERY', path: '/techno-sorcery' },
         { name: 'H2O', path: '/h2o' }
@@ -21,7 +20,6 @@ const Header = () => {
       title: 'Resources',
       type: 'dropdown',
       items: [
-        { name: 'SNEAKY SNAKE', path: '/resources/sneaky-snake' },
         { name: 'ROBOCOMMANDO CODEX', path: '/resources/robocommando' },
         { name: 'TECHNO SORCERY CHRONICLES', path: '/resources/techno-sorcery' },
         { name: 'H2O ROGUE OPERATIVE CODEX', path: '/resources/h2o' }

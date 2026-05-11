@@ -57,7 +57,6 @@ const Support = () => {
                 value={formData.project}
                 onChange={(e) => setFormData({...formData, project: e.target.value})}
               >
-                <option value="sneaky-snake">SNEAKY SNAKE</option>
                 <option value="robocommando">ROBOCOMMANDO</option>
                 <option value="techno-sorcery">TECHNO SORCERY</option>
                 <option value="h2o">H2O</option>
