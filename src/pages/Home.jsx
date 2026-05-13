@@ -63,28 +63,37 @@ const Home = () => {
           </p>
           
           <div className={styles.countdownWrapper}>
-            <p className={styles.countdownTitle}>CODEX PHASE 1 EPISODE 2 RELEASE</p>
-            <div className={styles.timer}>
-              <div className={styles.timeBox}>
-                <span className={styles.timeValue}>{timeLeft.days}</span>
-                <span className={styles.timeLabel}>DAYS</span>
+            <p className={styles.countdownTitle}>
+              {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 
+                ? 'CODEX PHASE 1 EPISODE 2 IS LIVE!' 
+                : 'CODEX PHASE 1 EPISODE 2 RELEASE'}
+            </p>
+            {!(timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0) && (
+              <div className={styles.timer}>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.days}</span>
+                  <span className={styles.timeLabel}>DAYS</span>
+                </div>
+                <span className={styles.timeDivider}>:</span>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.hours.toString().padStart(2, '0')}</span>
+                  <span className={styles.timeLabel}>HOURS</span>
+                </div>
+                <span className={styles.timeDivider}>:</span>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                  <span className={styles.timeLabel}>MIN</span>
+                </div>
+                <span className={styles.timeDivider}>:</span>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                  <span className={styles.timeLabel}>SEC</span>
+                </div>
               </div>
-              <span className={styles.timeDivider}>:</span>
-              <div className={styles.timeBox}>
-                <span className={styles.timeValue}>{timeLeft.hours.toString().padStart(2, '0')}</span>
-                <span className={styles.timeLabel}>HOURS</span>
-              </div>
-              <span className={styles.timeDivider}>:</span>
-              <div className={styles.timeBox}>
-                <span className={styles.timeValue}>{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                <span className={styles.timeLabel}>MIN</span>
-              </div>
-              <span className={styles.timeDivider}>:</span>
-              <div className={styles.timeBox}>
-                <span className={styles.timeValue}>{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                <span className={styles.timeLabel}>SEC</span>
-              </div>
-            </div>
+            )}
+            {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 && (
+              <Link to="/resources/robocommando" className={styles.exploreBtn} style={{marginTop: '20px', display: 'inline-block'}}>Read Now</Link>
+            )}
           </div>
 
           <Link to="/robocommando" className={styles.exploreBtn}>Explore Games</Link>

@@ -59,12 +59,29 @@ const ResourceRobocommando = () => {
       </div>
 
       {/* Episode 2 - Upcoming */}
-      <div className={styles.storyCard} style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left', padding: '30px', border: '1px dashed var(--primary-accent)'}}>
+      <div className={styles.storyCard} style={{maxWidth: '800px', margin: '0 auto', textAlign: 'left', padding: '30px', border: ep2Released ? 'none' : '1px dashed var(--primary-accent)', marginBottom: '40px'}}>
         {ep2Released ? (
           <>
-            <h2 style={{color: 'var(--primary-accent)', marginBottom: '30px', textAlign: 'center', fontSize: '2rem'}}>Codex Phase 1 Episode 2</h2>
+            <h2 style={{color: 'var(--primary-accent)', marginBottom: '30px', textAlign: 'center', fontSize: '2rem'}}>Codex Phase 1 Episode 2: The Solaris Foundation</h2>
+            <div style={{ position: 'relative', margin: '30px 0', borderRadius: '8px', overflow: 'hidden' }}>
+              <img src="/images/phase-1-episode-2.png" alt="Phase 1 Episode 2" style={{ width: '100%', display: 'block' }} />
+              <div style={{
+                position: 'absolute',
+                top: 0, left: 0, right: 0, bottom: 0,
+                background: 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 15%, transparent 30%, transparent 80%, rgba(0,0,0,0.6) 100%)',
+                pointerEvents: 'none'
+              }}></div>
+            </div>
             <div className={styles.storyContent} style={{lineHeight: '1.8', fontSize: '1.1rem'}}>
-              <p>[Episode 2 Content Released]</p>
+              <p>An era that had surpassed limits, broken natural orders, stood 'The Body'-- The Solaris foundation.</p>
+              <br/>
+              <p>The Solaris foundation was first founded in the year 2050 as the 'Cipher body'. Fifty years later (2100), It was renamed the Solaris foundation. This marked humanity's conviction to thrive within the universe</p>
+              <br/>
+              <p>They pioneered a three hundred year evolution plan for humanity. By the year 2400, the Solaris foundation has been the driving force behind humanity's meteoric evolution pace. They built the present era through refining and redefining technology, biological and geological make up of earth and natural physics. The Solaris foundation developed intelligence systems, effective health sustenance technology, food production systems and space travel.</p>
+              <br/>
+              <p>The Solaris foundation were Humanity's central governing authority, Earth's protectors through the Solar protectors arm. In-arguably, they were the portrayal of humanity's own will to survive and evolve, thus they were regarded as 'Humanity's earthly gods'.</p>
+              <br/>
+              <p>The solaris foundation led deep space missions and were yet to encounter the other side of the universe's coin.</p>
             </div>
           </>
         ) : (
