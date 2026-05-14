@@ -69,7 +69,7 @@ const Robocommando = () => {
         <section id="get-game" className={styles.section}>
           <h2 className={`${styles.sectionTitle} title-glow`}>Get the Game</h2>
           <p className={styles.text}>
-            Available soon on all major platforms. Pre-order now to receive exclusive neon skins.
+            Coming soon on all major platforms.
           </p>
           <button className={styles.neonBtn}>Pre-Order</button>
         </section>

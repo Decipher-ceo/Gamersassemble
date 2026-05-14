@@ -26,7 +26,7 @@ const ResourceRobocommando = () => {
       
       {/* Episode 1 - Already Released */}
       <div className={styles.storyCard} style={{maxWidth: '800px', margin: '0 auto 40px', textAlign: 'left', padding: '30px'}}>
-        <h2 style={{color: 'var(--primary-accent)', marginBottom: '30px', textAlign: 'center', fontSize: '2rem'}}>Codex Phase 1 Episode 1</h2>
+        <h2 style={{color: 'var(--primary-accent)', marginBottom: '30px', textAlign: 'center', fontSize: '2rem'}}>Codex entry 01 : Age of control</h2>
         <div style={{ position: 'relative', margin: '30px 0', borderRadius: '8px', overflow: 'hidden' }}>
           <img src="/images/phase-1-episode-1.png" alt="Phase 1 Episode 1" style={{ width: '100%', display: 'block' }} />
           <div style={{
@@ -44,16 +44,16 @@ const ResourceRobocommando = () => {
           <br/>
           <p>The year 2400 AD marked the official transition of humanity into yet another threshold of civilization-- Type 1.5.</p>
           <br/>
-          <p>The solaris foundation, Earth's present overseers made up of the Solar rulers and protectors, were bodies who pioneered humanity's efforts to grow and evolve-- capable of fully harnessing energy on planet Earth and its own star.</p>
+          <p>The Solaris Foundation, Earth's present overseers made up of the Solar rulers and protectors, were bodies who pioneered humanity's efforts to grow and evolve-- capable of fully harnessing energy on planet Earth and its own star.</p>
           <br/>
-          <p>The eighth month of the solaris calendar (Octsolaris) in the year 2400 witnessed humanity's transition completion. They conquered Earth, explored and exploited the entire solar system, and were ready to colonize more complex planetary forms.</p>
+          <p>The eighth month of the Solaris calendar (Octsolaris) in the year 2400 witnessed humanity's transition completion. They conquered Earth, explored and exploited the entire solar system, and were ready to colonize more complex planetary forms.</p>
           <br/>
-          <p>What more did they want to achieve?, what more could they crave??</p>
+          <p>What more did they want to achieve? What more could they crave?</p>
           <p>No--</p>
-          <p>the question is, 'What was waiting?</p>
+          <p>The question is, 'What was waiting?</p>
           <p>What mystery was to be stumbled upon?'</p>
           <br/>
-          <p>One truth remained--,</p>
+          <p>One truth remained--</p>
           <p>Humanity was never alone.</p>
         </div>
       </div>
@@ -73,15 +73,17 @@ const ResourceRobocommando = () => {
               }}></div>
             </div>
             <div className={styles.storyContent} style={{lineHeight: '1.8', fontSize: '1.1rem'}}>
-              <p>An era that had surpassed limits, broken natural orders, stood 'The Body'-- The Solaris foundation.</p>
+              <p>An era that had surpassed limits, broken natural orders, stood 'The Body'-- The Solaris Foundation.</p>
               <br/>
-              <p>The Solaris foundation was first founded in the year 2050 as the 'Cipher body'. Fifty years later (2100), It was renamed the Solaris foundation. This marked humanity's conviction to thrive within the universe</p>
+              <p>The Solaris Foundation was first founded in the year 2050 as the 'Cipher body'. Fifty years later (2100), it was renamed the Solaris Foundation.</p>
               <br/>
-              <p>They pioneered a three hundred year evolution plan for humanity. By the year 2400, the Solaris foundation has been the driving force behind humanity's meteoric evolution pace. They built the present era through refining and redefining technology, biological and geological make up of earth and natural physics. The Solaris foundation developed intelligence systems, effective health sustenance technology, food production systems and space travel.</p>
+              <p>This marked humanity's conviction to thrive within the universe.</p>
               <br/>
-              <p>The Solaris foundation were Humanity's central governing authority, Earth's protectors through the Solar protectors arm. In-arguably, they were the portrayal of humanity's own will to survive and evolve, thus they were regarded as 'Humanity's earthly gods'.</p>
+              <p>They pioneered a three hundred year evolution plan for humanity. By the year 2400, the Solaris Foundation had been the driving force behind humanity's meteoric evolution pace. They built the present era through refining and redefining technology, biological and geological makeup of Earth and natural physics. The Solaris Foundation developed intelligence systems, effective health sustenance technology, food production systems and space travel.</p>
               <br/>
-              <p>The solaris foundation led deep space missions and were yet to encounter the other side of the universe's coin.</p>
+              <p>The Solaris Foundation were humanity's central governing authority, Earth's protectors through the Solar protectors arm. Inarguably, they were the portrayal of humanity's own will to survive and evolve; thus, they were regarded as 'Humanity's earthly gods'.</p>
+              <br/>
+              <p>The Solaris Foundation led deep space missions and were yet to encounter the other side of the universe's coin.</p>
             </div>
           </>
         ) : (
