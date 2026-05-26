@@ -11,34 +11,6 @@ const images = [
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0, hours: 0, minutes: 0, seconds: 0
-  });
-
-  useEffect(() => {
-    // Target date: 52 hours from 2026-05-11 20:43:42
-    const targetDate = new Date('2026-05-14T00:43:42').getTime();
-
-    const updateTimer = () => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000)
-        });
-      } else {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    };
-
-    updateTimer();
-    const timer = setInterval(updateTimer, 1000);
-    return () => clearInterval(timer);
-  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
@@ -64,36 +36,9 @@ const Home = () => {
           
           <div className={styles.countdownWrapper}>
             <p className={styles.countdownTitle}>
-              {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 
-                ? 'CODEX PHASE 1 EPISODE 2 IS LIVE!' 
-                : 'CODEX PHASE 1 EPISODE 2 RELEASE'}
+              CODEX PHASE 1 EPISODE 3 IS LIVE!
             </p>
-            {!(timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0) && (
-              <div className={styles.timer}>
-                <div className={styles.timeBox}>
-                  <span className={styles.timeValue}>{timeLeft.days}</span>
-                  <span className={styles.timeLabel}>DAYS</span>
-                </div>
-                <span className={styles.timeDivider}>:</span>
-                <div className={styles.timeBox}>
-                  <span className={styles.timeValue}>{timeLeft.hours.toString().padStart(2, '0')}</span>
-                  <span className={styles.timeLabel}>HOURS</span>
-                </div>
-                <span className={styles.timeDivider}>:</span>
-                <div className={styles.timeBox}>
-                  <span className={styles.timeValue}>{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                  <span className={styles.timeLabel}>MIN</span>
-                </div>
-                <span className={styles.timeDivider}>:</span>
-                <div className={styles.timeBox}>
-                  <span className={styles.timeValue}>{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                  <span className={styles.timeLabel}>SEC</span>
-                </div>
-              </div>
-            )}
-            {timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0 && (
-              <Link to="/resources/robocommando" className={styles.exploreBtn} style={{marginTop: '20px', display: 'inline-block'}}>Read Now</Link>
-            )}
+            <Link to="/resources/robocommando" className={styles.exploreBtn} style={{marginTop: '20px', display: 'inline-block'}}>Read Now</Link>
           </div>
 
           <Link to="/robocommando" className={styles.exploreBtn}>Explore Games</Link>

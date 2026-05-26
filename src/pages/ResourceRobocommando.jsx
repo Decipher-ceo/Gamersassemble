@@ -4,7 +4,7 @@ import styles from './ResourceRobocommando.module.css';
 const ResourceRobocommando = () => {
   const [ep2Released, setEp2Released] = useState(false);
   const [expanded, setExpanded] = useState({
-    ep1: true,
+    ep1: false,
     ep2: false,
     ep3: false
   });
@@ -12,7 +12,7 @@ const ResourceRobocommando = () => {
   useEffect(() => {
     // Episode 2 target date: 52 hours from 2026-05-11 20:43:42
     const targetDateEp2 = new Date('2026-05-14T00:43:42').getTime();
-    
+
     const checkRelease = () => {
       const now = new Date().getTime();
       if (now >= targetDateEp2) {
@@ -35,11 +35,11 @@ const ResourceRobocommando = () => {
   return (
     <div className={styles.container}>
       <h1 className={`${styles.mainTitle} title-glow`}>ROBOCOMMANDO CODEX</h1>
-      
+
       {/* Phase 1 - Collapsible List Container */}
       <div className={styles.phaseContainer}>
         <h2 className={styles.phaseTitle}>Robocommando Codex Phase 1</h2>
-        
+
         <div className={styles.episodeList}>
           {/* Episode 1 */}
           <div className={`${styles.episodeItem} ${expanded.ep1 ? styles.episodeItemOpen : ''}`}>
@@ -97,8 +97,8 @@ const ResourceRobocommando = () => {
                     </div>
                   </>
                 ) : (
-                  <div style={{textAlign: 'center', padding: '20px 0'}}>
-                    <h3 className={styles.storyTitle} style={{color: 'var(--text-secondary)'}}>CLASSIFIED: PHASE 1 EPISODE 2</h3>
+                  <div style={{ textAlign: 'center', padding: '20px 0' }}>
+                    <h3 className={styles.storyTitle} style={{ color: 'var(--text-secondary)' }}>CLASSIFIED: PHASE 1 EPISODE 2</h3>
                     <p className={styles.storyContent}>This Codex entry is encrypted. Decryption will be completed on May 14th.</p>
                   </div>
                 )}
@@ -120,10 +120,12 @@ const ResourceRobocommando = () => {
                   <div className={styles.imageOverlay}></div>
                 </div>
                 <div className={styles.storyContent}>
-                  <p>During one of humanity's deep space missions, humanity encountered something that changed their entire perception of the universe forever.</p>
-                  <p>On the tenth month of 2420 AD, the Space Eagle Gen-073 escorted by a fleet of Sol protector ships left Earth for yet another deep space mission. In just 10 hours, they arrived at the Inner spiral arm now known as The Iron Meridian using a Resonance Gateway. Spaceships relied on massive orbital mega-structures known as Resonance Gates built by the Solaris foundation. These gates created stable, localized wormholes linking specific sectors.</p>
+                  <p>During one of humanity's deep space missions, one encounter changed humanity's entire perception of the universe forever.</p>
+                  <p>On the tenth month of 2420 AD, Space Eagle Gen-073 escorted by a fleet of Sol protector ships left Earth for yet another deep space mission.</p>
+                  <p>In just 10 hours, they arrived at the Inner spiral arm now known as The Iron Meridian using a Resonance Gateway.</p>
+                  <p>Spaceships relied on massive orbital mega-structures known as Resonance Gates built by the Solaris foundation. These gates created stable, localized wormholes linking specific sectors.</p>
                   <p>It was one of the usual missions; or so was thought.</p>
-                  <p>After staying for a calculated amount of ten days (Earth's time) while collecting and experimenting on samples, something was stumbled upon. Sensors rocked, signals went violent. Someone or something was broadcasting and listening also on their broadcast channel to the ground crew on earth. It couldn't have been any other space ship because the closest was 6000 light years away.</p>
+                  <p>After staying for a calculated amount of ten days (Earth's time) while collecting and experimenting on samples, something was stumbled upon. Sensors rocked, signals went violent. Someone or something was broadcasting and listening also on their broadcast channel. It couldn't have been any other space ship because the closest was 6000 light years away.</p>
                   <p>No life force was detected, no movement noticed or made. The chilling reality was that whatever was behind it was an advanced form of existence.</p>
                   <p>The channel was traced to the deeper parts of the Iron Meridian, suddenly, the entire radio system was jacked, Earth's ground crew observers froze, and instantly, the entire fleet of Sol protectors prepared to engage.</p>
                   <p>Whatever that was behind the radio jacking was on another level or totally beyond humanity's league.</p>
