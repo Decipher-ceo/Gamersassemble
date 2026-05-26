@@ -1,0 +1,250 @@
+.container {
+  padding: 120px 20px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--primary-accent);
+  letter-spacing: 2px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+}
+
+/* Phase Container */
+.phaseContainer {
+  background: rgba(15, 5, 0, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 69, 0, 0.25);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 69, 0, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phaseContainer:hover {
+  border-color: rgba(255, 69, 0, 0.4);
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 69, 0, 0.1);
+}
+
+.phaseTitle {
+  font-family: 'Black Ops One', sans-serif;
+  color: var(--secondary-accent);
+  margin-bottom: 30px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255, 69, 0, 0.15);
+  padding-bottom: 15px;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* Collapsible Episode Styles */
+.episodeList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.episodeItem {
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  border-radius: 10px;
+  background: rgba(20, 10, 5, 0.4);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.episodeItem:hover {
+  border-color: var(--primary-accent);
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.15);
+  background: rgba(20, 10, 5, 0.6);
+}
+
+.episodeItemOpen {
+  border-color: var(--primary-accent);
+  box-shadow: 0 4px 25px rgba(255, 69, 0, 0.25);
+  background: rgba(15, 5, 0, 0.8);
+}
+
+.episodeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.episodeHeader:hover {
+  background: rgba(255, 69, 0, 0.08);
+}
+
+.episodeTitle {
+  font-size: 1.25rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.episodeItem:hover .episodeTitle {
+  color: var(--secondary-accent);
+}
+
+.episodeIcon {
+  font-size: 0.9rem;
+  color: var(--primary-accent);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.episodeItemOpen .episodeIcon {
+  transform: rotate(180deg);
+  color: var(--secondary-accent);
+}
+
+.episodeBody {
+  border-top: 1px solid rgba(255, 69, 0, 0.15);
+  padding: 30px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image styles */
+.imageWrapper {
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 69, 0, 0.2);
+}
+
+.imageWrapper img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.episodeItem:hover .imageWrapper img {
+  transform: scale(1.02);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 15%, transparent 30%, transparent 80%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+
+.storyTitle {
+  color: var(--primary-accent);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
+}
+
+.storyContent {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.storyContent p {
+  margin-bottom: 15px;
+}
+
+.storyContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Phase 2 Coming Soon Box */
+.comingSoonBox {
+  border: 2px dashed rgba(255, 69, 0, 0.35);
+  background: rgba(255, 69, 0, 0.02);
+  border-radius: 12px;
+  padding: 60px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.comingSoonBox:hover {
+  border-color: var(--primary-accent);
+  background: rgba(255, 69, 0, 0.05);
+  box-shadow: 0 0 20px rgba(255, 69, 0, 0.1);
+}
+
+.comingSoonText {
+  font-family: 'Black Ops One', sans-serif;
+  font-size: 2.2rem;
+  color: var(--text-secondary);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  animation: pulseText 2s infinite ease-in-out;
+  text-shadow: 0 0 15px rgba(255, 221, 170, 0.2);
+}
+
+@keyframes pulseText {
+  0%, 100% { opacity: 0.6; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); text-shadow: 0 0 25px rgba(255, 69, 0, 0.4); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 15px 40px;
+  }
+  
+  .mainTitle {
+    font-size: 2.5rem;
+    margin-bottom: 35px;
+  }
+  
+  .phaseContainer {
+    padding: 25px 20px;
+  }
+  
+  .phaseTitle {
+    font-size: 1.6rem;
+  }
+  
+  .episodeHeader {
+    padding: 15px 20px;
+  }
+  
+  .episodeTitle {
+    font-size: 1.1rem;
+  }
+  
+  .episodeBody {
+    padding: 20px;
+  }
+  
+  .storyTitle {
+    font-size: 1.4rem;
+  }
+  
+  .storyContent {
+    font-size: 1rem;
+  }
+  
+  .comingSoonText {
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+  }
+}
