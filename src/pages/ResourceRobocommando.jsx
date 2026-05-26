@@ -125,11 +125,11 @@ const ResourceRobocommando = () => {
                   <p>In just 10 hours, they arrived at the Inner spiral arm now known as The Iron Meridian using a Resonance Gateway.</p>
                   <p>Spaceships relied on massive orbital mega-structures known as Resonance Gates built by the Solaris foundation. These gates created stable, localized wormholes linking specific sectors.</p>
                   <p>It was one of the usual missions; or so was thought.</p>
-                  <p>After staying for a calculated amount of ten days (Earth's time) while collecting and experimenting on samples, something was stumbled upon. Sensors rocked, signals went violent. Someone or something was broadcasting and listening also on their broadcast channel. It couldn't have been any other space ship because the closest was 6000 light years away.</p>
+                  <p>After staying for a calculated amount of ten days (Earth's time) while collecting and experimenting on samples, something was stumbled upon. Sensors rocked, signals went violent. Someone or something was broadcasting and listening also on their broadcast channel: It couldn't have been any other space ship because the closest was 6000 light years away.</p>
                   <p>No life force was detected, no movement noticed or made. The chilling reality was that whatever was behind it was an advanced form of existence.</p>
-                  <p>The channel was traced to the deeper parts of the Iron Meridian, suddenly, the entire radio system was jacked, Earth's ground crew observers froze, and instantly, the entire fleet of Sol protectors prepared to engage.</p>
-                  <p>Whatever that was behind the radio jacking was on another level or totally beyond humanity's league.</p>
-                  <p>The moment, out of the atmosphere filled with dense gases and dusk, heavily armored creatures proceeded.</p>
+                  <p>The channel was traced to the deeper parts of the Iron Meridian, suddenly, the entire radio system was jacked, ground crew observers on Earth froze. Instantly, the entire fleet of Sol protectors prepared to engage.</p>
+                  <p>Whatever that was behind the jacking was on another level or totally beyond humanity's league.</p>
+                  <p>The moment, from the horizon, in a void atmosphere, heavily armored creatures proceeded.</p>
                 </div>
               </div>
             )}
