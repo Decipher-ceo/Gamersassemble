@@ -63,13 +63,14 @@ const ResourceRobocommando = () => {
                 <div className={styles.storyContent}>
                   <p>Humanity had reached great heights.</p>
                   <p>No natural force on Earth could challenge it.</p>
-                  <p>The feel of zenith planetary synchronization, the conceivable peak of biological synthesis. In this momentary apex of control, humanity had grasped a reasonable feat of civilization evolution.</p>
+                  <p>The feel of zenith planetary synchronization, the conceivable peak of biological synthesis.</p>
+                  <p>In this momentary apex of control, humanity had grasped a reasonable feat of civilization evolution.</p>
                   <p>The year 2400 AD marked the official transition of humanity into yet another threshold of civilization-- Type 1.5.</p>
-                  <p>The Solaris Foundation, Earth's present overseers made up of the Solar rulers and protectors, were bodies who pioneered humanity's efforts to grow and evolve-- capable of fully harnessing energy on planet Earth and its own star.</p>
+                  <p>The Solaris Foundation: Earth's present overseers made up of the Solar rulers and protectors, were bodies who pioneered humanity's efforts to grow and evolve-- capable of fully harnessing energy on planet Earth and its own star.</p>
                   <p>The eighth month of the Solaris calendar (Octsolaris) in the year 2400 witnessed humanity's transition completion. They conquered Earth, explored and exploited the entire solar system, and were ready to colonize more complex planetary forms.</p>
                   <p>What more did they want to achieve? What more could they crave?</p>
                   <p>No--</p>
-                  <p>The question is, 'What was waiting?</p>
+                  <p>The question is 'What was waiting?'</p>
                   <p>What mystery was to be stumbled upon?'</p>
                   <p>One truth remained--</p>
                   <p>Humanity was never alone.</p>
@@ -94,11 +95,11 @@ const ResourceRobocommando = () => {
                       <div className={styles.imageOverlay}></div>
                     </div>
                     <div className={styles.storyContent}>
-                      <p>An era that had surpassed limits, broken natural orders, stood 'The Body'-- The Solaris Foundation.</p>
+                      <p>An era that had surpassed limits, broken natural orders stood, 'The Body',  The Solaris Foundation.</p>
                       <p>The Solaris Foundation was first founded in the year 2050 as the 'Cipher body'. Fifty years later (2100), it was renamed the Solaris Foundation.</p>
                       <p>This marked humanity's conviction to thrive within the universe.</p>
-                      <p>They pioneered a three hundred year evolution plan for humanity. By the year 2400, the Solaris Foundation had been the driving force behind humanity's meteoric evolution pace. They built the present era through refining and redefining technology, biological and geological makeup of Earth and natural physics. The Solaris Foundation developed intelligence systems, effective health sustenance technology, food production systems and space travel.</p>
-                      <p>The Solaris Foundation were humanity's central governing authority, Earth's protectors through the Solar protectors arm. Inarguably, they were the portrayal of humanity's own will to survive and evolve; thus, they were regarded as 'Humanity's earthly gods'.</p>
+                      <p>They pioneered a three hundred year evolution plan for humanity. By the year 2400, the Solaris Foundation had been the driving force behind humanity's meteoric evolution pace. They built the present era through refining technology, redefining the biological and geological makeup of Earth and natural physics. The Solaris Foundation developed intelligence systems, effective health sustenance technology, food production systems and space travel.</p>
+                      <p>The Solaris Foundation were humanity's central governing authority, Earth's protectors through the Solar protectors arm. Inarguably, they were the portrayal of humanity's own will to survive and evolve. Thus, they were regarded as 'Humanity's earthly gods'.</p>
                       <p>The Solaris Foundation led deep space missions and were yet to encounter the other side of the universe's coin.</p>
                     </div>
                   </>
@@ -128,14 +129,14 @@ const ResourceRobocommando = () => {
                 <div className={styles.storyContent}>
                   <p>During one of humanity's deep space missions, one encounter changed humanity's entire perception of the universe forever.</p>
                   <p>On the tenth month of 2420 AD, Space Eagle Gen-073 escorted by a fleet of Sol protector ships left Earth for yet another deep space mission.</p>
-                  <p>In just 10 hours, they arrived at the Inner spiral arm now known as The Iron Meridian using a Resonance Gateway.</p>
+                  <p>In 10 hours, they arrived at the Inner spiral arm now known as The Iron Meridian using a Resonance Gateway.</p>
                   <p>Spaceships relied on massive orbital mega-structures known as Resonance Gates built by the Solaris foundation. These gates created stable, localized wormholes linking specific sectors.</p>
                   <p>It was one of the usual missions; or so was thought.</p>
-                  <p>After staying for a calculated amount of ten days (Earth's time) while collecting and experimenting on samples, something was stumbled upon. Sensors rocked, signals went violent. Someone or something was broadcasting and listening also on their broadcast channel: It couldn't have been any other space ship because the closest was 6000 light years away.</p>
+                  <p>After staying for a combined amount of ten days (Earth's time) while collecting and experimenting on samples, something was stumbled upon. Sensors rocked, signals went violent. Someone or something was listening on their broadcast channel. It couldn't have been any other space ship because the closest was 6000 light years away.</p>
                   <p>No life force was detected, no movement noticed or made. The chilling reality was that whatever was behind it was an advanced form of existence.</p>
                   <p>The channel was traced to the deeper parts of the Iron Meridian, suddenly, the entire radio system was jacked, ground crew observers on Earth froze. Instantly, the entire fleet of Sol protectors prepared to engage.</p>
                   <p>Whatever that was behind the jacking was on another level or totally beyond humanity's league.</p>
-                  <p>The moment, from the horizon, in a void atmosphere, heavily armored creatures proceeded.</p>
+                  <p>In that moment, from the horizon, in a void atmosphere, heavily armored creatures proceeded.</p>
                 </div>
               </div>
             )}
