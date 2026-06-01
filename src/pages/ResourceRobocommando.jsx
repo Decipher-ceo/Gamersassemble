@@ -3,20 +3,26 @@ import styles from './ResourceRobocommando.module.css';
 
 const ResourceRobocommando = () => {
   const [ep2Released, setEp2Released] = useState(false);
+  const [ep4Released, setEp4Released] = useState(false);
   const [expanded, setExpanded] = useState({
     ep1: false,
     ep2: false,
-    ep3: false
+    ep3: false,
+    ep4: false
   });
 
   useEffect(() => {
     // Episode 2 target date: 52 hours from 2026-05-11 20:43:42
     const targetDateEp2 = new Date('2026-05-14T00:43:42').getTime();
+    const targetDateEp4 = new Date('2026-06-02T17:56:15+01:00').getTime();
 
     const checkRelease = () => {
       const now = new Date().getTime();
       if (now >= targetDateEp2) {
         setEp2Released(true);
+      }
+      if (now >= targetDateEp4) {
+        setEp4Released(true);
       }
     };
 
@@ -131,6 +137,46 @@ const ResourceRobocommando = () => {
                   <p>Whatever that was behind the jacking was on another level or totally beyond humanity's league.</p>
                   <p>The moment, from the horizon, in a void atmosphere, heavily armored creatures proceeded.</p>
                 </div>
+              </div>
+            )}
+          </div>
+
+          {/* Episode 4 */}
+          <div className={`${styles.episodeItem} ${expanded.ep4 ? styles.episodeItemOpen : ''}`}>
+            <div className={styles.episodeHeader} onClick={() => toggleExpand('ep4')}>
+              <span className={styles.episodeTitle}>Robocommando Codex Phase 1 Episode 4</span>
+              <span className={styles.episodeIcon}>▼</span>
+            </div>
+            {expanded.ep4 && (
+              <div className={styles.episodeBody}>
+                {ep4Released ? (
+                  <>
+                    <h3 className={styles.storyTitle}>Codex Phase 1 Episode 4: First Alien Race (Continued)</h3>
+                    <div className={styles.imageWrapper}>
+                      <img src="/images/phase-1-episode-4.png" alt="Phase 1 Episode 4" />
+                      <div className={styles.imageOverlay}></div>
+                    </div>
+                    <div className={styles.storyContent}>
+                      <p>Clothed in complex engineering, unidentified warfare attire/materials, alienoid figures approached.</p>
+                      <p>Possessing a distinct head like structure(though alien in every regard), a constant twelve feet appearance across each figure, dozens of extruding body parts which could neither be called limbs nor tentacles. Only one thing seemed familiar: Color. The crew could describe their color as shades of grey and black.</p>
+                      <p>Not merely a complex organism.</p>
+                      <p>A fundamentally different form of life.</p>
+                      <p>Sol protectors immediately assumed combat readiness. But one thing was disturbing about the presumed enemy: The way they behaved. An obvious depiction of intelligence, synchronization in movement that looked stereotyped or was just beyond human comprehension, their perception of the environment. So much confidence was exhibited whilst they carried out their operation. The crew could only deduce one thing: An operation of this level and sort meant they had been watched from the onset.</p>
+                      <p>This could be their end. Possibly, the end of humanity as well depending on how events unfolded.</p>
+                      <p>Nonetheless, a few brave sol protectors engaged. Using a weapon operating on advanced Nano technology integration called the Zero-state catalyst which operated by forcing matter to it's lowest possible state (absolute zero) to freeze, shatter or neutralize targets. They could not over throw the enemy. It was like bringing a 17th century bow and arrow weapon to a 21st century nuclear war while expecting to win. Those who engaged paid dearly with their lives after being considered threats by the opposite party.</p>
+                      <p>A trapping mechanism using Hard light was activated on the crew along side the fleet from earth as they were lifted from the ground to an unknown location.</p>
+                      <p>Weeks passed, multiple searches were conducted in the Iron meridian region and all were void of positive results.</p>
+                      <p>In the year 2420, a message was received at the Sol space agency ground station. It read, "WE KNOW YOU! WE COME IN PEACE! WE HAVE YOUR PEOPLE" .</p>
+                      <p>The entire agency was in a state of cacophony. Fear was the most perceived feeling. Even curiosity had lost its wits.</p>
+                      <p>One question was dominant, disturbing and the most terrifying: "Their unapproved visitor spoke a language known only to humanity".</p>
+                    </div>
+                  </>
+                ) : (
+                  <div style={{ textAlign: 'center', padding: '20px 0' }}>
+                    <h3 className={styles.storyTitle} style={{ color: 'var(--text-secondary)' }}>CLASSIFIED: PHASE 1 EPISODE 4</h3>
+                    <p className={styles.storyContent}>This Codex entry is encrypted. Decryption will be completed on June 2nd.</p>
+                  </div>
+                )}
               </div>
             )}
           </div>

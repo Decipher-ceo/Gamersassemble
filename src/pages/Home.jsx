@@ -12,6 +12,32 @@ const images = [
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const calculateTimeLeft = () => {
+    const targetDate = new Date('2026-06-02T17:56:15+01:00').getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        isLive: false
+      };
+    } else {
+      timeLeft = {
+        isLive: true
+      };
+    }
+
+    return timeLeft;
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
@@ -19,6 +45,14 @@ const Home = () => {
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const slideInterval = setInterval(nextSlide, 4000);
@@ -34,12 +68,39 @@ const Home = () => {
             Explore our universe of upcoming 3D gaming titles, immersive shorts, and interactive worlds.
           </p>
           
-          <div className={styles.countdownWrapper}>
-            <p className={styles.countdownTitle}>
-              CODEX PHASE 1 EPISODE 3 IS LIVE!
-            </p>
-            <Link to="/resources/robocommando" className={styles.exploreBtn} style={{marginTop: '20px', display: 'inline-block'}}>Read Now</Link>
-          </div>
+          {timeLeft.isLive ? (
+            <div className={styles.countdownWrapper}>
+              <p className={styles.countdownTitle}>
+                CODEX PHASE 1 EPISODE 4 IS LIVE!
+              </p>
+              <Link to="/resources/robocommando" className={styles.exploreBtn} style={{marginTop: '20px', display: 'inline-block'}}>Read Now</Link>
+            </div>
+          ) : (
+            <div className={styles.countdownWrapper}>
+              <p className={styles.countdownTitle}>CODEX PHASE 1 EPISODE 4 RELEASE</p>
+              <div className={styles.timer}>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.days}</span>
+                  <span className={styles.timeLabel}>DAYS</span>
+                </div>
+                <span className={styles.timeDivider}>:</span>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.hours !== undefined ? timeLeft.hours.toString().padStart(2, '0') : '00'}</span>
+                  <span className={styles.timeLabel}>HOURS</span>
+                </div>
+                <span className={styles.timeDivider}>:</span>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.minutes !== undefined ? timeLeft.minutes.toString().padStart(2, '0') : '00'}</span>
+                  <span className={styles.timeLabel}>MIN</span>
+                </div>
+                <span className={styles.timeDivider}>:</span>
+                <div className={styles.timeBox}>
+                  <span className={styles.timeValue}>{timeLeft.seconds !== undefined ? timeLeft.seconds.toString().padStart(2, '0') : '00'}</span>
+                  <span className={styles.timeLabel}>SEC</span>
+                </div>
+              </div>
+            </div>
+          )}
 
           <Link to="/robocommando" className={styles.exploreBtn}>Explore Games</Link>
         </div>

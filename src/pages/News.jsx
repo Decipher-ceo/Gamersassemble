@@ -3,13 +3,18 @@ import styles from './News.module.css';
 
 const News = () => {
   const [ep2Released, setEp2Released] = useState(false);
+  const [ep4Released, setEp4Released] = useState(false);
 
   useEffect(() => {
     const targetDateEp2 = new Date('2026-05-14T00:43:42').getTime();
+    const targetDateEp4 = new Date('2026-06-02T17:56:15+01:00').getTime();
     const checkRelease = () => {
       const now = new Date().getTime();
       if (now >= targetDateEp2) {
         setEp2Released(true);
+      }
+      if (now >= targetDateEp4) {
+        setEp4Released(true);
       }
     };
     checkRelease();
@@ -18,6 +23,13 @@ const News = () => {
   }, []);
 
   const updates = [
+    { 
+      date: ep4Released ? 'JUN 2, 2026' : 'JUN 1, 2026', 
+      title: ep4Released ? 'Phase 1 Episode 4: First Alien Race (Continued)' : 'Phase 1 Episode 4 Launch Incoming', 
+      content: ep4Released 
+        ? 'Phase 1 Episode 4 of The Robocommando Codex is now live. Read the continuation of the encounter with the first alien race on our Resource page.' 
+        : 'Phase 1 Episode 4 of the ROBOCOMMANDO Codex is set to be released on the Gamers assemble resource page in the next 20 hours....Stay tuned' 
+    },
     { 
       date: ep2Released ? 'MAY 14, 2026' : 'MAY 11, 2026', 
       title: ep2Released ? 'Phase 1 Episode 2: The Solaris Foundation' : 'Phase 1 episode 2 Launch', 
