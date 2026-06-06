@@ -13,7 +13,7 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-06-02T17:56:15+01:00').getTime();
+    const targetDate = new Date('2026-06-06T20:00:00+01:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -71,13 +71,13 @@ const Home = () => {
           {timeLeft.isLive ? (
             <div className={styles.countdownWrapper}>
               <p className={styles.countdownTitle}>
-                CODEX PHASE 1 EPISODE 4 IS LIVE!
+                CODEX PHASE 1 EPISODE 5 IS LIVE!
               </p>
               <Link to="/resources/robocommando" className={styles.exploreBtn} style={{marginTop: '20px', display: 'inline-block'}}>Read Now</Link>
             </div>
           ) : (
             <div className={styles.countdownWrapper}>
-              <p className={styles.countdownTitle}>CODEX PHASE 1 EPISODE 4 RELEASE</p>
+              <p className={styles.countdownTitle}>CODEX PHASE 1 EPISODE 5 RELEASE</p>
               <div className={styles.timer}>
                 <div className={styles.timeBox}>
                   <span className={styles.timeValue}>{timeLeft.days}</span>

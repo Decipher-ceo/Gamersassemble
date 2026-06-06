@@ -23,6 +23,11 @@ const News = () => {
   }, []);
 
   const updates = [
+    {
+      date: 'JUN 6, 2026',
+      title: 'Phase 1 Episode 5: The Unapproved Visitor',
+      content: 'Phase 1 Episode 5 of The Robocommando Codex is now live. Read about the arrival of the unidentified vessel on our Resource page.'
+    },
     { 
       date: ep4Released ? 'JUN 2, 2026' : 'JUN 1, 2026', 
       title: ep4Released ? 'Phase 1 Episode 4: First Alien Race (Continued)' : 'Phase 1 Episode 4 Launch Incoming', 
