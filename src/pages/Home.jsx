@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
-
 import { Link } from 'react-router-dom';
+import MailerLiteForm from '../components/MailerLiteForm';
 
 const images = [
   { id: 1, src: '/images/robocommando-main.png', alt: 'Robocommando' },
@@ -162,6 +162,8 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      <MailerLiteForm />
     </div>
   );
 };

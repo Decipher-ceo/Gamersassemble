@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ResourceRobocommando.module.css';
+import MailerLiteForm from '../components/MailerLiteForm';
 
 const ResourceRobocommando = () => {
   const [ep2Released, setEp2Released] = useState(false);
@@ -42,6 +43,8 @@ const ResourceRobocommando = () => {
   return (
     <div className={styles.container}>
       <h1 className={`${styles.mainTitle} title-glow`}>ROBOCOMMANDO CODEX</h1>
+
+      <MailerLiteForm />
 
       {/* Phase 1 - Collapsible List Container */}
       <div className={styles.phaseContainer}>
