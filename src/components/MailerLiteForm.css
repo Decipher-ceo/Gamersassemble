@@ -814,6 +814,7 @@
 }
 
 #mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper:hover {
+  transform: scale(1.03) !important; /* Scale on hover */
   box-shadow:
     0 0 35px rgba(193, 18, 31, 0.45),
     0 0 70px rgba(255, 69, 0, 0.3),
@@ -1002,6 +1003,11 @@
 
 #mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:active {
   transform: translateY(1px) scale(0.99) !important;
+}
+
+/* Ensure the hidden MailerLite loading button remains hidden */
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
+  display: none !important;
 }
 
 /* ─── Scroll-Trigger Entry Bounce Animation ───────────────────── */

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './MailerLiteForm.css';
 
 /* ─── Particle System ─────────────────────────────────────────── */
-const COLORS = ['#FFD700', '#FFA500', '#FF6B00', '#C1121F', '#FF4500', '#FFEC8B'];
+const COLORS = ['#FFD700', '#FFA500', '#FF3300', '#FF5500', '#FFCC00', '#FFFFA0'];
 
 class Particle {
   constructor(canvas) {
@@ -13,13 +13,14 @@ class Particle {
   reset() {
     const c = this.canvas;
     this.x = Math.random() * c.width;
-    this.y = Math.random() * c.height;
+    this.y = Math.random() * c.height; // Spawns all over the section
     // 1.8x size scale to satisfy "*1.7 of its present size"
     this.radius = (Math.random() * 2.2 + 0.4) * 1.8;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
-    this.speedX = (Math.random() - 0.5) * 0.5;
-    this.speedY = -(Math.random() * 0.7 + 0.3);
-    this.opacity = Math.random() * 0.7 + 0.3;
+    this.speedX = (Math.random() - 0.5) * 0.8;
+    // Slight upward bias, but floats in all directions for ambient distribution
+    this.speedY = (Math.random() - 0.5) * 0.6 - 0.2;
+    this.opacity = Math.random() * 0.4 + 0.6; // Brighter opacity: 0.6 to 1.0
     this.opacityDelta = (Math.random() * 0.008 + 0.003) * (Math.random() < 0.5 ? 1 : -1);
     this.life = 0;
     this.maxLife = Math.random() * 240 + 100;
@@ -46,24 +47,25 @@ class Particle {
         const angle = Math.atan2(dy, dx);
         
         // Push particles away smoothly
-        this.x += Math.cos(angle) * force * 4.5;
-        this.y += Math.sin(angle) * force * 4.5;
+        this.x += Math.cos(angle) * force * 5;
+        this.y += Math.sin(angle) * force * 5;
       }
     }
 
     this.opacity += this.opacityDelta;
-    if (this.opacity > 0.9) this.opacityDelta *= -1;
-    if (this.opacity < 0.1) this.opacityDelta *= -1;
+    if (this.opacity > 0.95) this.opacityDelta *= -1;
+    if (this.opacity < 0.45) this.opacityDelta *= -1; // Maintain bright visibility
 
-    // Reset particle if it leaves bounds or finishes life
-    if (
-      this.life >= this.maxLife ||
-      this.x < -30 ||
-      this.x > this.canvas.width + 30 ||
-      this.y < -30
-    ) {
-      this.reset();
-      this.y = this.canvas.height + 15;
+    // Screen wrapping instead of resetting only at the bottom
+    const pad = 30;
+    if (this.x < -pad) this.x = this.canvas.width + pad;
+    if (this.x > this.canvas.width + pad) this.x = -pad;
+    if (this.y < -pad) this.y = this.canvas.height + pad;
+    if (this.y > this.canvas.height + pad) this.y = -pad;
+
+    if (this.life >= this.maxLife) {
+      this.life = 0;
+      this.maxLife = Math.random() * 240 + 100;
     }
   }
 
@@ -104,7 +106,7 @@ const MailerLiteForm = () => {
     };
     resize();
 
-    const PARTICLE_COUNT = 160; // Slightly more particles for the wider, larger section
+    const PARTICLE_COUNT = 220; // Increased particle population
     particlesRef.current = Array.from({ length: PARTICLE_COUNT }, () => new Particle(canvas));
 
     const loop = () => {
