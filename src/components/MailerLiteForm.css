@@ -738,14 +738,14 @@
 .ml-section-wrapper {
   position: relative;
   width: 100%;
-  min-height: 480px;
+  min-height: 600px; /* Increased vertical space */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: #050508;
   margin: 0;
-  padding: 60px 20px;
+  padding: 80px 40px;
   box-sizing: border-box;
 }
 
@@ -766,8 +766,8 @@
   inset: 0;
   background: radial-gradient(
     ellipse at center,
-    rgba(5, 5, 8, 0.45) 0%,
-    rgba(5, 5, 8, 0.72) 100%
+    rgba(5, 5, 8, 0.35) 0%,
+    rgba(5, 5, 8, 0.75) 100%
   );
   z-index: 1;
   pointer-events: none;
@@ -786,30 +786,317 @@
 /* Override the default table-display on the embedContainer so flex works */
 .ml-section-content #mlb2-42371436.ml-form-embedContainer {
   display: block !important;
-  width: auto !important;
-  max-width: 500px;
-  width: 100%;
+  width: 100% !important;
+  max-width: 920px !important; /* Double the width */
 }
 
-/* Add a subtle glow around the form card */
-.ml-section-content .ml-form-embedWrapper {
+/* Double the form card container width */
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+  max-width: 920px !important;
+  width: 100% !important;
+}
+
+/* ─── Redesigned Premium Glassmorphic Container ───────────────── */
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper {
+  background: rgba(12, 4, 2, 0.75) !important;
+  border: 2px solid #ff4500 !important; /* Vivid Red-Orange */
+  border-radius: 16px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   box-shadow:
-    0 0 30px rgba(193, 18, 31, 0.35),
-    0 0 60px rgba(255, 107, 0, 0.15),
-    0 8px 32px rgba(0, 0, 0, 0.7) !important;
-  transition: box-shadow 0.3s ease;
+    0 0 20px rgba(193, 18, 31, 0.25),
+    0 0 45px rgba(255, 69, 0, 0.15),
+    0 0 70px rgba(255, 215, 0, 0.08),
+    0 10px 40px rgba(0, 0, 0, 0.85) !important;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
 }
 
-.ml-section-content .ml-form-embedWrapper:hover {
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper:hover {
   box-shadow:
-    0 0 45px rgba(193, 18, 31, 0.55),
-    0 0 90px rgba(255, 107, 0, 0.25),
-    0 12px 40px rgba(0, 0, 0, 0.8) !important;
+    0 0 35px rgba(193, 18, 31, 0.45),
+    0 0 70px rgba(255, 69, 0, 0.3),
+    0 0 100px rgba(255, 215, 0, 0.18),
+    0 15px 50px rgba(0, 0, 0, 0.95) !important;
+  border-color: #ffd700 !important; /* Glow transition to Gold */
 }
 
-@media only screen and (max-width: 540px) {
-  .ml-section-wrapper {
-    padding: 40px 16px;
-    min-height: 420px;
+/* ─── Two-Column Form Layout ──────────────────────────────────── */
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+  padding: 40px !important;
+  box-sizing: border-box !important;
+}
+
+.ml-form-embedBodyDefault {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 40px !important;
+}
+
+/* Left block - Info content */
+.ml-form-embedContent {
+  flex: 1 1 52% !important;
+  margin: 0 !important;
+}
+
+/* Right block - Form element */
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+  flex: 1 1 43% !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+}
+
+/* ─── Animated Text Effects (Red, Orange, Gold) ────────────────── */
+.ml-text-glow {
+  font-family: 'Orbitron', 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 32px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  background: linear-gradient(135deg, #ffd700 0%, #ff6b00 50%, #ff4500 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  margin: 0 0 15px 0 !important;
+  text-shadow: 0 0 20px rgba(255, 107, 0, 0.3) !important;
+  animation: textPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes textPulse {
+  0% {
+    filter: drop-shadow(0 0 1px rgba(255, 215, 0, 0.2));
+  }
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 69, 0, 0.55));
   }
 }
+
+.ml-redesign-subtitle {
+  font-family: 'Orbitron', 'Inter', sans-serif !important;
+  color: #ffddaa !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  margin-bottom: 20px !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Custom Bullet List */
+.ml-redesign-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 15px 0 0 0 !important;
+}
+
+.ml-redesign-list li {
+  position: relative !important;
+  padding-left: 28px !important;
+  margin-bottom: 12px !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  color: #ffb85c !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+
+.ml-redesign-list li::before {
+  content: "✦" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  color: #ffd700 !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 8px #ffd700 !important;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+.ml-redesign-list li:hover {
+  color: #ffffff !important;
+  transform: translateX(6px) scale(1.03) !important;
+}
+
+.ml-redesign-list li:hover::before {
+  color: #ff4500 !important;
+  text-shadow: 0 0 12px #ff4500 !important;
+  transform: rotate(90deg) scale(1.2) !important;
+}
+
+/* ─── Premium Form Input fields ───────────────────────────────── */
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
+  font-family: 'Orbitron', 'Inter', sans-serif !important;
+  color: #ffd700 !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  margin-bottom: 8px !important;
+}
+
+.ml-form-formContent, 
+.ml-form-fieldRow {
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+  background-color: rgba(20, 5, 0, 0.8) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 69, 0, 0.4) !important;
+  border-radius: 8px !important;
+  padding: 14px 16px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 15px !important;
+  height: 48px !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:focus {
+  outline: none !important;
+  border-color: #ffd700 !important;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.45) !important;
+  background-color: rgba(30, 8, 2, 0.9) !important;
+}
+
+/* ─── Premium Button Redesign ─────────────────────────────────── */
+.ml-form-embedSubmit {
+  margin: 10px 0 0 0 !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+  font-family: 'Orbitron', sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  height: 48px !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  border: 1px solid rgba(255, 215, 0, 0.3) !important;
+  background: linear-gradient(135deg, #c1121f 0%, #ff4500 45%, #ffd700 90%, #ff4500 100%) !important;
+  background-size: 300% 100% !important;
+  background-position: 0% 0% !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(193, 18, 31, 0.3) !important;
+  transition: all 0.5s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+  background-position: 100% 0% !important;
+  box-shadow:
+    0 0 25px rgba(255, 69, 0, 0.65),
+    0 0 10px rgba(255, 215, 0, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+#mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:active {
+  transform: translateY(1px) scale(0.99) !important;
+}
+
+/* ─── Scroll-Trigger Entry Bounce Animation ───────────────────── */
+.ml-form-hidden {
+  opacity: 0;
+  transform: scale(0.75) translateY(40px);
+}
+
+.ml-form-bounce-in {
+  animation: formBounceIn 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes formBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.75) translateY(40px);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(1.03) translateY(-8px);
+  }
+  80% {
+    transform: scale(0.98) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ─── Success Panel Redesign ─────────────────────────────────── */
+.ml-form-successBody {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 250px !important;
+  padding: 40px !important;
+}
+
+.ml-form-successContent {
+  text-align: center !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.ml-form-successContent h4 {
+  margin-bottom: 15px !important;
+}
+
+/* ─── Responsive Adjustments ────────────────────────────────── */
+@media only screen and (max-width: 900px) {
+  .ml-section-wrapper {
+    padding: 60px 20px;
+    min-height: 520px;
+  }
+  
+  .ml-form-embedBodyDefault {
+    flex-direction: column !important;
+    gap: 35px !important;
+  }
+  
+  .ml-form-embedContent {
+    flex: 1 1 100% !important;
+    text-align: center !important;
+  }
+  
+  .ml-form-embedContent h4 {
+    text-align: center !important;
+    font-size: 28px !important;
+  }
+  
+  .ml-redesign-subtitle {
+    text-align: center !important;
+  }
+  
+  .ml-redesign-list {
+    display: inline-block !important;
+    text-align: left !important;
+  }
+  
+  #mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+  #mlb2-42371436.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+    padding: 24px 20px !important;
+  }
+  
+  .ml-text-glow {
+    font-size: 24px !important;
+  }
+}
+

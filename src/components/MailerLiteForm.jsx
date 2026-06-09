@@ -14,31 +14,56 @@ class Particle {
     const c = this.canvas;
     this.x = Math.random() * c.width;
     this.y = Math.random() * c.height;
-    this.radius = Math.random() * 2.2 + 0.4;
+    // 1.8x size scale to satisfy "*1.7 of its present size"
+    this.radius = (Math.random() * 2.2 + 0.4) * 1.8;
     this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
-    this.speedX = (Math.random() - 0.5) * 0.6;
-    this.speedY = -(Math.random() * 0.8 + 0.3);
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = -(Math.random() * 0.7 + 0.3);
     this.opacity = Math.random() * 0.7 + 0.3;
     this.opacityDelta = (Math.random() * 0.008 + 0.003) * (Math.random() < 0.5 ? 1 : -1);
     this.life = 0;
-    this.maxLife = Math.random() * 220 + 80;
+    this.maxLife = Math.random() * 240 + 100;
+    // Organic wave parameters
+    this.waveFreq = Math.random() * 0.015 + 0.005;
+    this.waveAmp = Math.random() * 0.35 + 0.1;
   }
 
-  update() {
-    this.x += this.speedX;
+  update(mouse) {
+    // 1. Apply primary velocities + sine wave drift for floating effect
+    this.x += this.speedX + Math.sin(this.life * this.waveFreq) * this.waveAmp;
     this.y += this.speedY;
     this.life++;
+
+    // 2. Cursor repulsion interaction
+    if (mouse && mouse.x !== null && mouse.y !== null) {
+      const dx = this.x - mouse.x;
+      const dy = this.y - mouse.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const threshold = mouse.radius || 120;
+      if (distance < threshold) {
+        // Stronger repulsion close to cursor, fading out towards the edge
+        const force = (threshold - distance) / threshold;
+        const angle = Math.atan2(dy, dx);
+        
+        // Push particles away smoothly
+        this.x += Math.cos(angle) * force * 4.5;
+        this.y += Math.sin(angle) * force * 4.5;
+      }
+    }
+
     this.opacity += this.opacityDelta;
-    if (this.opacity > 0.95) this.opacityDelta *= -1;
-    if (this.opacity < 0.05) this.opacityDelta *= -1;
+    if (this.opacity > 0.9) this.opacityDelta *= -1;
+    if (this.opacity < 0.1) this.opacityDelta *= -1;
+
+    // Reset particle if it leaves bounds or finishes life
     if (
       this.life >= this.maxLife ||
-      this.x < -10 ||
-      this.x > this.canvas.width + 10 ||
-      this.y < -10
+      this.x < -30 ||
+      this.x > this.canvas.width + 30 ||
+      this.y < -30
     ) {
       this.reset();
-      this.y = this.canvas.height + 5;
+      this.y = this.canvas.height + 15;
     }
   }
 
@@ -49,7 +74,7 @@ class Particle {
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.fillStyle = this.color;
     ctx.shadowColor = this.color;
-    ctx.shadowBlur = 8;
+    ctx.shadowBlur = 12; // Extra glow for larger particles
     ctx.fill();
     ctx.restore();
   }
@@ -58,15 +83,20 @@ class Particle {
 /* ─── Component ───────────────────────────────────────────────── */
 const MailerLiteForm = () => {
   const [success, setSuccess] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  
   const canvasRef = useRef(null);
   const animRef = useRef(null);
   const particlesRef = useRef([]);
+  const mouseRef = useRef({ x: null, y: null, radius: 120 });
+  const containerRef = useRef(null);
 
   /* ── Particle animation ── */
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    const parent = canvas.parentElement;
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -74,25 +104,73 @@ const MailerLiteForm = () => {
     };
     resize();
 
-    const PARTICLE_COUNT = 140;
+    const PARTICLE_COUNT = 160; // Slightly more particles for the wider, larger section
     particlesRef.current = Array.from({ length: PARTICLE_COUNT }, () => new Particle(canvas));
 
     const loop = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const mouse = mouseRef.current;
       for (const p of particlesRef.current) {
-        p.update();
+        p.update(mouse);
         p.draw(ctx);
       }
       animRef.current = requestAnimationFrame(loop);
     };
     animRef.current = requestAnimationFrame(loop);
 
+    const handleMouseMove = (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseRef.current.x = e.clientX - rect.left;
+      mouseRef.current.y = e.clientY - rect.top;
+    };
+
+    const handleMouseLeave = () => {
+      mouseRef.current.x = null;
+      mouseRef.current.y = null;
+    };
+
+    if (parent) {
+      parent.addEventListener('mousemove', handleMouseMove, { passive: true });
+      parent.addEventListener('mouseleave', handleMouseLeave);
+    }
+
     const ro = new ResizeObserver(resize);
-    ro.observe(canvas.parentElement);
+    if (parent) {
+      ro.observe(parent);
+    }
 
     return () => {
       cancelAnimationFrame(animRef.current);
       ro.disconnect();
+      if (parent) {
+        parent.removeEventListener('mousemove', handleMouseMove);
+        parent.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, []);
+
+  /* ── Scroll Trigger Observer ── */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.1, // Trigger when 10% is in viewport
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
     };
   }, []);
 
@@ -132,24 +210,24 @@ const MailerLiteForm = () => {
       <div className="ml-section-overlay" />
 
       {/* Centered form card */}
-      <div className="ml-section-content">
+      <div className="ml-section-content" ref={containerRef}>
         <div
           id="mlb2-42371436"
           className="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-42371436"
         >
           <div className="ml-form-align-center">
-            <div className="ml-form-embedWrapper embedForm">
+            <div className={`ml-form-embedWrapper embedForm ${isVisible ? 'ml-form-bounce-in' : 'ml-form-hidden'}`}>
 
               {!success ? (
                 <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
                   <div className="ml-form-embedContent">
-                    <h4>Enter The Solaris Era</h4>
-                    <p>
-                      <span style={{ color: 'rgb(255, 215, 0)' }}>
+                    <h4 className="ml-text-glow">Enter The Solaris Era</h4>
+                    <p className="ml-redesign-subtitle">
+                      <span>
                         <strong>Join the Codex initiative and receive:</strong>
                       </span>
                     </p>
-                    <ul>
+                    <ul className="ml-redesign-list">
                       <li>Episode release</li>
                       <li>Development updates</li>
                       <li>Exclusive lore</li>
@@ -206,8 +284,8 @@ const MailerLiteForm = () => {
               ) : (
                 <div className="ml-form-successBody row-success">
                   <div className="ml-form-successContent">
-                    <h4>Thank you!</h4>
-                    <p>You have successfully joined our subscriber list.</p>
+                    <h4 className="ml-text-glow">Thank you!</h4>
+                    <p className="ml-redesign-subtitle">You have successfully joined our subscriber list.</p>
                   </div>
                 </div>
               )}
