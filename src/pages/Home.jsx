@@ -10,8 +10,7 @@ const heroSlides = [
   { src: '/images/phase-1-episode-5.png'   },
   { src: '/images/phase-1-episode-5ii.png' },
   { src: '/images/phase-1-episode-2.png'   },
-  { src: '/images/phase-1-episode-3.png'   },
-  { src: '/images/phase-1-episode-4.png'   },
+
   { src: '/images/H2O-1.png'               },
   { src: '/images/techno-sorcery-4.png'    },
   { src: '/images/robocommando-main.png'   },
@@ -22,8 +21,7 @@ const galleryImages = [
   { id: 1, src: '/images/robocommando-main.png',   alt: 'Robocommando' },
   { id: 2, src: '/images/H2O-1.png',               alt: 'H2O' },
   { id: 3, src: '/images/techno-sorcery-4.png',    alt: 'Techno Sorcery' },
-  { id: 4, src: '/images/phase-1-episode-3.png',   alt: 'Episode 3' },
-  { id: 5, src: '/images/phase-1-episode-4.png',   alt: 'Episode 4' },
+
 ];
 
 // SVG gaming device icons
