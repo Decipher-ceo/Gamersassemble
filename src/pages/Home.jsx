@@ -6,7 +6,9 @@ import MailerLiteForm from '../components/MailerLiteForm';
 const FULL_TITLE = 'EXPERIENCE OUR UNIVERSE';
 
 // Hero slides — all requested images
+// Hero slides — all requested images
 const heroSlides = [
+  { src: '/images/phase-1-episode-6.png'   },
   { src: '/images/phase-1-episode-5.png'   },
   { src: '/images/phase-1-episode-5ii.png' },
   { src: '/images/phase-1-episode-2.png'   },
@@ -131,7 +133,7 @@ const Home = () => {
 
   // Countdown
   const calculateTimeLeft = () => {
-    const targetDate = new Date('2026-06-06T20:00:00+01:00').getTime();
+    const targetDate = new Date('2026-06-13T19:57:32+01:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
     if (difference > 0) {
@@ -266,14 +268,14 @@ const Home = () => {
 
           {timeLeft.isLive ? (
             <div className={styles.countdownWrapper}>
-              <p className={styles.countdownTitle}>🔴 CODEX PHASE 1 EPISODE 5 IS LIVE!</p>
+              <p className={styles.countdownTitle}>🔴 CODEX PHASE 1 EPISODE 6 IS LIVE!</p>
               <Link to="/resources/robocommando" className={styles.exploreBtn} style={{ marginTop: '20px', display: 'inline-block' }}>
                 Read Now
               </Link>
             </div>
           ) : (
             <div className={styles.countdownWrapper}>
-              <p className={styles.countdownTitle}>CODEX PHASE 1 EPISODE 5 RELEASE</p>
+              <p className={styles.countdownTitle}>CODEX PHASE 1 EPISODE 6 RELEASE</p>
               <div className={styles.timer}>
                 {[
                   { value: timeLeft.days,    label: 'DAYS'  },
