@@ -5,18 +5,22 @@ import MailerLiteForm from '../components/MailerLiteForm';
 const ResourceRobocommando = () => {
   const [ep2Released, setEp2Released] = useState(false);
   const [ep4Released, setEp4Released] = useState(false);
+  const [ep6Released, setEp6Released] = useState(false);
+  const [timeLeftEp6, setTimeLeftEp6] = useState({ hours: 0, minutes: 0, seconds: 0 });
   const [expanded, setExpanded] = useState({
     ep1: false,
     ep2: false,
     ep3: false,
     ep4: false,
-    ep5: false
+    ep5: false,
+    ep6: false
   });
 
   useEffect(() => {
     // Episode 2 target date: 52 hours from 2026-05-11 20:43:42
     const targetDateEp2 = new Date('2026-05-14T00:43:42').getTime();
     const targetDateEp4 = new Date('2026-06-02T17:56:15+01:00').getTime();
+    const targetDateEp6 = new Date('2026-06-13T19:57:32+01:00').getTime();
 
     const checkRelease = () => {
       const now = new Date().getTime();
@@ -25,6 +29,15 @@ const ResourceRobocommando = () => {
       }
       if (now >= targetDateEp4) {
         setEp4Released(true);
+      }
+      if (now >= targetDateEp6) {
+        setEp6Released(true);
+      } else {
+        const diff = targetDateEp6 - now;
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        setTimeLeftEp6({ hours, minutes, seconds });
       }
     };
 
@@ -78,7 +91,7 @@ const ResourceRobocommando = () => {
                   <p>What mystery was to be stumbled upon?'</p>
                   <p>One truth remained--</p>
                   <p>Humanity was never alone.</p>
-                </div>
+                  </div>
               </div>
             )}
           </div>
@@ -208,6 +221,59 @@ const ResourceRobocommando = () => {
                   <p>The entire city were surrounded by sol protectors from all directions ready to engage if need be.</p>
                   <p>Creatures descended one-by-one. Not just creatures but fundamental forms of life that comfortably rivaled the height of intelligence achieved by humanity.</p>
                 </div>
+              </div>
+            )}
+          </div>
+
+          {/* Episode 6 */}
+          <div className={`${styles.episodeItem} ${expanded.ep6 ? styles.episodeItemOpen : ''}`}>
+            <div className={styles.episodeHeader} onClick={() => toggleExpand('ep6')}>
+              <span className={styles.episodeTitle}>Robocommando Codex Phase 1 Episode 6</span>
+              <span className={styles.episodeIcon}>▼</span>
+            </div>
+            {expanded.ep6 && (
+              <div className={styles.episodeBody}>
+                {ep6Released ? (
+                  <>
+                    <h3 className={styles.storyTitle}>Codex Phase 1 Episode 6: The Unapproved Visitor (Continued)</h3>
+                    <div className={styles.imageWrapper}>
+                      <img src="/images/phase-1-episode-6.png" alt="Phase 1 Episode 6" />
+                      <div className={styles.imageOverlay}></div>
+                    </div>
+                    <div className={styles.storyContent}>
+                      <p>It was dawn for humanity, the beginning of a new era as it seemed. Determining whether this era would make or mar humanity was the most demanding situation.</p>
+                      <p>The Umbras were an ancient cybernetic-biological hybrid species.</p>
+                      <p>While experimenting on their human subjects they realized that humanity on their planet (Umbra) were essentially walking hydraulic presses possessing raw kinetic violence owing to the fact that humans evolved and learned to fight Earth's gravity which was times three in comparison the Umbras. This discovery was yet to be realized by the human subjects held captive. With their mastery of localized gravity, they quickly adapted using Localized density wells (commonly known as G-lock) which artificially stimulated times four of Earth's gravity thereby making it incredibly difficult to move their body parts as it were as lifting over hundreds of pounds of weight.</p>
+                      <p>Centuries ago, their home star cluster suffered a series of micro-nova chain reactions (or intense cosmic ray bombardment) that stripped their home worlds atmosphere and altered their planet's core chemistry. To survive, they engineered a synthetic heavy element composition fuel - Neutrinium-7, to power their artificial atmospheric shields. But Neutrinium-7 decayed rapidly and caused cellular degradation over generations. They were dying.</p>
+                      <p>While they continued studying their human subjects, they discovered atomic traces of bio singularity crystals. This was the element they needed in order to revive their dying race. To Earth it was an exotic mineral but to the Umbras it was the ultimate stabilizing catalyst.</p>
+                      <p>Fast forward to now, they were sitting face-to-face with the Sol rulers in a protected cabin filled with peaked atmospheres and tensed emotions right here on planet Earth.</p>
+                      <p>In perhaps the most unsettling way to begin a diplomatic relation, one of their representatives unknowingly confirmed one of humanity's greatest fears by letting loose string of sounds which clearly translated to a statement in a language thought to be known only to humanity: 'We are the Umbras, we come in peace'.</p>
+                    </div>
+                  </>
+                ) : (
+                  <div className={styles.countdownContainer}>
+                    <h3 className={styles.storyTitle} style={{ color: 'var(--text-secondary)' }}>CLASSIFIED: PHASE 1 EPISODE 6</h3>
+                    <p className={styles.storyContent} style={{ marginBottom: '25px' }}>
+                      This Codex entry is encrypted. Decryption in progress...
+                    </p>
+                    <div className={styles.timerGrid}>
+                      <div className={styles.timerItem}>
+                        <span className={styles.timerNum}>{timeLeftEp6.hours.toString().padStart(2, '0')}</span>
+                        <span className={styles.timerLabel}>Hours</span>
+                      </div>
+                      <div className={styles.timerDivider}>:</div>
+                      <div className={styles.timerItem}>
+                        <span className={styles.timerNum}>{timeLeftEp6.minutes.toString().padStart(2, '0')}</span>
+                        <span className={styles.timerLabel}>Minutes</span>
+                      </div>
+                      <div className={styles.timerDivider}>:</div>
+                      <div className={styles.timerItem}>
+                        <span className={styles.timerNum}>{timeLeftEp6.seconds.toString().padStart(2, '0')}</span>
+                        <span className={styles.timerLabel}>Seconds</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>

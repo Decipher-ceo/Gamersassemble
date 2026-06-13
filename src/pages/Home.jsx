@@ -28,60 +28,60 @@ const galleryImages = [
 const DeviceIcon = ({ type }) => {
   if (type === 'pc') return (
     <svg viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="5" width="70" height="45" rx="4" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+      <rect x="5" y="5" width="70" height="45" rx="4" stroke="currentColor" strokeWidth="4" fill="none"/>
       <rect x="15" y="12" width="50" height="31" rx="2" fill="currentColor" opacity="0.15"/>
       <rect x="25" y="15" width="30" height="22" rx="1" fill="currentColor" opacity="0.3"/>
       {/* Screen glow lines */}
-      <line x1="28" y1="20" x2="52" y2="20" stroke="currentColor" strokeWidth="1.5" opacity="0.6"/>
-      <line x1="28" y1="25" x2="48" y2="25" stroke="currentColor" strokeWidth="1.5" opacity="0.4"/>
-      <line x1="28" y1="30" x2="44" y2="30" stroke="currentColor" strokeWidth="1.5" opacity="0.3"/>
+      <line x1="28" y1="20" x2="52" y2="20" stroke="currentColor" strokeWidth="2.5" opacity="0.6"/>
+      <line x1="28" y1="25" x2="48" y2="25" stroke="currentColor" strokeWidth="2.5" opacity="0.4"/>
+      <line x1="28" y1="30" x2="44" y2="30" stroke="currentColor" strokeWidth="2.5" opacity="0.3"/>
       {/* Stand */}
-      <path d="M30 50 L32 58 L48 58 L50 50" stroke="currentColor" strokeWidth="2" fill="none"/>
-      <line x1="28" y1="58" x2="52" y2="58" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M30 50 L32 58 L48 58 L50 50" stroke="currentColor" strokeWidth="3" fill="none"/>
+      <line x1="28" y1="58" x2="52" y2="58" stroke="currentColor" strokeWidth="4" strokeLinecap="round"/>
     </svg>
   );
   if (type === 'xbox') return (
     <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="40" cy="30" rx="35" ry="26" stroke="currentColor" strokeWidth="2.5" fill="none"/>
-      <circle cx="40" cy="30" r="10" stroke="currentColor" strokeWidth="2" fill="currentColor" opacity="0.2"/>
+      <ellipse cx="40" cy="30" rx="35" ry="26" stroke="currentColor" strokeWidth="4" fill="none"/>
+      <circle cx="40" cy="30" r="10" stroke="currentColor" strokeWidth="3" fill="currentColor" opacity="0.2"/>
       <circle cx="40" cy="30" r="6" fill="currentColor" opacity="0.4"/>
       {/* Xbox X */}
-      <path d="M37 27 L43 33 M43 27 L37 33" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M37 27 L43 33 M43 27 L37 33" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
       {/* Bumpers */}
-      <path d="M12 18 Q25 10 38 15" stroke="currentColor" strokeWidth="2" fill="none"/>
-      <path d="M68 18 Q55 10 42 15" stroke="currentColor" strokeWidth="2" fill="none"/>
+      <path d="M12 18 Q25 10 38 15" stroke="currentColor" strokeWidth="3" fill="none"/>
+      <path d="M68 18 Q55 10 42 15" stroke="currentColor" strokeWidth="3" fill="none"/>
       {/* Thumbsticks */}
-      <circle cx="25" cy="35" r="5" stroke="currentColor" strokeWidth="1.5" fill="currentColor" opacity="0.2"/>
-      <circle cx="55" cy="35" r="5" stroke="currentColor" strokeWidth="1.5" fill="currentColor" opacity="0.2"/>
+      <circle cx="25" cy="35" r="5" stroke="currentColor" strokeWidth="2.5" fill="currentColor" opacity="0.2"/>
+      <circle cx="55" cy="35" r="5" stroke="currentColor" strokeWidth="2.5" fill="currentColor" opacity="0.2"/>
     </svg>
   );
   if (type === 'ps') return (
     <svg viewBox="0 0 80 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8 35 C8 35 15 12 40 12 C65 12 72 35 72 35 L68 42 C65 47 57 50 50 48 L40 44 L30 48 C23 50 15 47 12 42 Z" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+      <path d="M8 35 C8 35 15 12 40 12 C65 12 72 35 72 35 L68 42 C65 47 57 50 50 48 L40 44 L30 48 C23 50 15 47 12 42 Z" stroke="currentColor" strokeWidth="4" fill="none"/>
       {/* Touch pad */}
-      <rect x="30" y="24" width="20" height="12" rx="6" stroke="currentColor" strokeWidth="1.5" fill="currentColor" opacity="0.2"/>
+      <rect x="30" y="24" width="20" height="12" rx="6" stroke="currentColor" strokeWidth="2.5" fill="currentColor" opacity="0.2"/>
       {/* D-pad */}
-      <path d="M20 32 L20 28 M18 30 L22 30" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M20 32 L20 28 M18 30 L22 30" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
       {/* Buttons */}
-      <circle cx="57" cy="27" r="2.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      <circle cx="62" cy="32" r="2.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      <circle cx="57" cy="37" r="2.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-      <circle cx="52" cy="32" r="2.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+      <circle cx="57" cy="27" r="2.5" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+      <circle cx="62" cy="32" r="2.5" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+      <circle cx="57" cy="37" r="2.5" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+      <circle cx="52" cy="32" r="2.5" stroke="currentColor" strokeWidth="2.5" fill="none"/>
       {/* Thumbsticks */}
-      <circle cx="25" cy="40" r="4" stroke="currentColor" strokeWidth="1.5" fill="currentColor" opacity="0.2"/>
-      <circle cx="51" cy="40" r="4" stroke="currentColor" strokeWidth="1.5" fill="currentColor" opacity="0.2"/>
+      <circle cx="25" cy="40" r="4" stroke="currentColor" strokeWidth="2.5" fill="currentColor" opacity="0.2"/>
+      <circle cx="51" cy="40" r="4" stroke="currentColor" strokeWidth="2.5" fill="currentColor" opacity="0.2"/>
     </svg>
   );
   if (type === 'phone') return (
     <svg viewBox="0 0 40 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="4" y="3" width="32" height="64" rx="6" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+      <rect x="4" y="3" width="32" height="64" rx="6" stroke="currentColor" strokeWidth="4" fill="none"/>
       <rect x="8" y="10" width="24" height="42" rx="2" fill="currentColor" opacity="0.15"/>
       {/* Screen content */}
-      <line x1="11" y1="18" x2="29" y2="18" stroke="currentColor" strokeWidth="1.5" opacity="0.5"/>
-      <line x1="11" y1="24" x2="25" y2="24" stroke="currentColor" strokeWidth="1.5" opacity="0.3"/>
+      <line x1="11" y1="18" x2="29" y2="18" stroke="currentColor" strokeWidth="2.5" opacity="0.5"/>
+      <line x1="11" y1="24" x2="25" y2="24" stroke="currentColor" strokeWidth="2.5" opacity="0.3"/>
       <rect x="11" y="30" width="18" height="14" rx="2" fill="currentColor" opacity="0.25"/>
       {/* Home button */}
-      <circle cx="20" cy="60" r="3" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+      <circle cx="20" cy="60" r="3" stroke="currentColor" strokeWidth="2.5" fill="none"/>
       {/* Camera */}
       <circle cx="20" cy="7" r="1.5" fill="currentColor" opacity="0.6"/>
     </svg>

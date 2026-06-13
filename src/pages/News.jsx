@@ -4,10 +4,14 @@ import styles from './News.module.css';
 const News = () => {
   const [ep2Released, setEp2Released] = useState(false);
   const [ep4Released, setEp4Released] = useState(false);
+  const [ep6Released, setEp6Released] = useState(false);
+  const [timeLeftEp6, setTimeLeftEp6] = useState({ hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
     const targetDateEp2 = new Date('2026-05-14T00:43:42').getTime();
     const targetDateEp4 = new Date('2026-06-02T17:56:15+01:00').getTime();
+    const targetDateEp6 = new Date('2026-06-13T19:57:32+01:00').getTime();
+
     const checkRelease = () => {
       const now = new Date().getTime();
       if (now >= targetDateEp2) {
@@ -16,6 +20,15 @@ const News = () => {
       if (now >= targetDateEp4) {
         setEp4Released(true);
       }
+      if (now >= targetDateEp6) {
+        setEp6Released(true);
+      } else {
+        const diff = targetDateEp6 - now;
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        setTimeLeftEp6({ hours, minutes, seconds });
+      }
     };
     checkRelease();
     const interval = setInterval(checkRelease, 1000);
@@ -23,6 +36,13 @@ const News = () => {
   }, []);
 
   const updates = [
+    {
+      date: 'JUN 13, 2026',
+      title: ep6Released ? 'Phase 1 Episode 6: The Unapproved Visitor (Continued)' : 'Phase 1 Episode 6 Launch Incoming',
+      content: ep6Released
+        ? 'Phase 1 Episode 6 of The Robocommando Codex is now live. Read the continuation of the encounter on our Resource page.'
+        : `Phase 1 Episode 6 of the ROBOCOMMANDO Codex is set to be released on the Gamers assemble resource page in ${timeLeftEp6.hours.toString().padStart(2, '0')}h ${timeLeftEp6.minutes.toString().padStart(2, '0')}m ${timeLeftEp6.seconds.toString().padStart(2, '0')}s. Stay tuned!`
+    },
     {
       date: 'JUN 6, 2026',
       title: 'Phase 1 Episode 5: The Unapproved Visitor',
